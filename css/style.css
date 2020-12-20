@@ -25,7 +25,11 @@ body {
   height: 95vh;
   /* we have a bg image. We need to set green color on top of it, so we specify a gradiant. Gradiant will come first coz it should stay on top of bg image */
   /* linear gradiant is having multiple colors and to right indicate from left (dark green to right light green). We can also give to top OR to bottom OR to right bottom and so on */
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(126, 213, 111, 0.8),
+      rgb(40, 180, 133, 0.8)
+    ),
     url(../img/hero.jpg);
   background-size: cover; /* fits completely*/
   background-position: top; /* always fixed to top. Top never changes when u reduce window size. Can be done for bottom/center as well. Play with it and see*/
