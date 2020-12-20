@@ -6,3 +6,24 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+/* this is the first thing you do. Each and every element in css will apply this. This removes default margins and paddings on any element like h1 or p */
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato" sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+}
+
+.header {
+  height: 95vh;
+  background-image: url(../img/hero.jpg);
+  background-size: cover; /* fits completely*/
+  background-position: top; /* always fixed to top. Top never changes when u reduce window size. Can be done for bottom/center as well. Play with it and see*/
+}
