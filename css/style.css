@@ -46,4 +46,18 @@ body {
 Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 100%, 0 100%)
   */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* setting this element to relative because this is parent element to logo-box which is the child and absolutely positioned */
+  position: relative;
+}
+
+/* Logo */
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.logo {
+  /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
+  /* The same applies of width. If we set width, then height will be set automatically by browser */
+  height: 35px;
 }
