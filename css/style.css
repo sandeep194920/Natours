@@ -85,10 +85,36 @@ want main and sub to be on different lines */
   font-size: 60px;
   font-weight: 400; /*by default h1 has higher font-weight;*/
   letter-spacing: 35px;
+  /* applying css animation - making use of defined keyframe for fading in from left*/
+  animation-name: moveInLeft;
+  animation-duration: 1s; /* this long animation should take*/
 }
 .heading-primary-sub {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 17.4px;
+  letter-spacing: 16.4px;
+}
+
+/* CSS Animation for the heading-primary */
+
+/* this is for .heading-primary-main which needs to move in from left when page is loaded or reloaded */
+@keyframes moveInLeft {
+  /* before the animation start. Can be called anything, here we call as 0% */
+  /* start */
+  0% {
+    opacity: 0; /* at the beginning it should be invisible */
+    /* at the beginning it should be more in the left so translate -100px */
+    transform: translateX(-100px);
+  }
+  /* in between. can have more steps to it*/
+  80% {
+    transform: translateX(10px);
+  }
+  /* finish */
+  100% {
+    opacity: 1;
+    /* at the end it should be exactly in the the center and should not translate */
+    transform: translate(0);
+  }
 }
