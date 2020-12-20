@@ -61,3 +61,22 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   /* The same applies of width. If we set width, then height will be set automatically by browser */
   height: 35px;
 }
+/* Heading */
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+/* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
+want main and sub to be on different lines */
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400; /*by default h1 has higher font-weight;*/
+  letter-spacing: 35px;
+}
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 7 00;
+  letter-spacing: 17.4px;
+}
