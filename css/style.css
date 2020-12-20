@@ -67,12 +67,10 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   position: absolute;
   top: 40%;
   left: 50%;
-  background-color: red;
-  /* At this point, checkout this commit and take a look at how it looks in the browser. For better understanding I am using background red which I will
-  remove in next commit. Even thought its left 50% and top 40%, it looks odd coz text-box's beginning  is set to top 40 and left 50.
-  Whereas, we need text-box's center part to be aligned 40% from top and 50% from left. 
-  We will fix this by adding transform property  when translated, the element itself will move as defined inside translate and that gives better look
-  which will be done in the next commit*/
+  /* The text-box's center needs to be top-40 and left-50 and not the text-box's start. This can be done by adding transform translate */
+  /* translate moves the text-box itself as defined inside translate */
+  transform: translate(-50%, -50%);
+  /* X = -50% and Y=-50%, so that it's center will be aligned properly  */
 }
 
 /* Heading */
