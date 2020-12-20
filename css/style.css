@@ -88,6 +88,13 @@ want main and sub to be on different lines */
   /* applying css animation - making use of defined keyframe for fading in from left*/
   animation-name: moveInLeft;
   animation-duration: 1s; /* this long animation should take*/
+
+  /* Additional animation properties */
+  /* 
+  animation-left: 3s   - Animation will start after 3seconds
+  animation-iteration-count: 3;  - Animation will happen for 3 times
+  
+  */
 }
 .heading-primary-sub {
   display: block;
