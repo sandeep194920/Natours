@@ -34,4 +34,16 @@ body {
     url(../img/hero.jpg);
   background-size: cover; /* fits completely*/
   background-position: top; /* always fixed to top. Top never changes when u reduce window size. Can be done for bottom/center as well. Play with it and see*/
+
+  /* clip-path is to trim the image where we need. polygon takes 4 points left, right, right bottom and left bottom. 
+  0 0 -> first 0 is from left side of webpage and second 0 is from top of webpage
+  so, we say at 0 0 my point should be located
+  similarly, 100% 0 -> from left side of webpage my second point should be placed 100% and 0% from top 
+  and so on.
+  
+  For detailed explanation view - https://www.youtube.com/watch?v=fn88PkKo9gQ&ab_channel=WinstonCodes
+  You can calculate this using - https://bennettfeely.com/clippy/
+Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 100%, 0 100%)
+  */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
