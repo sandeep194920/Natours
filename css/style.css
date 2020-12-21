@@ -71,6 +71,12 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   /* translate moves the text-box itself as defined inside translate */
   transform: translate(-50%, -50%);
   /* X = -50% and Y=-50%, so that it's center will be aligned properly  */
+
+  /* this is used so that the .btn (anchor tag) which is inline element centers itself in this block */
+  text-align: center;
+
+  /* margin:auto vs text-align: center;; */
+  /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */
 }
 
 /* Heading */
@@ -80,6 +86,9 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   /* to make the animation work without shaking. Why this works is not clearly known at this point of time */
   /* make sure you use this when you use animations */
   backface-visibility: hidden;
+
+  /* margin for button btn */
+  margin-bottom: 60px;
 }
 /* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
 want main and sub to be on different lines */
@@ -148,4 +157,24 @@ want main and sub to be on different lines */
     opacity: 1;
     transform: translate(0);
   }
+}
+/* button */
+/* we are using a - anchor tag for button link  */
+/* a - has 4 states - link, visited, active and hover */
+/* link - normal state of a */
+/* visited - once user visites it, you might have noticed it becomes violet color from blue after clicking the link */
+/* active - currently clicked link state */
+
+/* using pseudo selectors we can define these states as shown */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
+  display: inline-block;
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
