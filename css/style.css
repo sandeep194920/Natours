@@ -77,6 +77,9 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  /* to make the animation work without shaking. Why this works is not clearly known at this point of time */
+  /* make sure you use this when you use animations */
+  backface-visibility: hidden;
 }
 /* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
 want main and sub to be on different lines */
