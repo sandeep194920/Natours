@@ -89,6 +89,10 @@ want main and sub to be on different lines */
   animation-name: moveInLeft;
   animation-duration: 1s; /* this long animation should take*/
 
+  /* animation-timing-function specifies how the animation effect should be with in the animation-duration time 1 second*/
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
+  animation-timing-function: ease-out;
+
   /* Additional animation properties */
   /* 
   animation-left: 3s   - Animation will start after 3seconds
