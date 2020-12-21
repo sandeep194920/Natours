@@ -174,6 +174,12 @@ want main and sub to be on different lines */
   /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
   display: inline-block;
   border-radius: 100px; /* will remain same for higher numbers too . will stop after 40px*/
+
+  /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
+  /* all here specifies - all effects like on hover transform and active transform should all apply here */
+  /* there might be a confusion about why this must be in link/visited state, but that's how it should be */
+  /* we define transition here and related transofrm will be specified as below in hover and active states */
+  transition: all 0.2s;
 }
 .btn:hover {
   transform: translateY(-3px);
