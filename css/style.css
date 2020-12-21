@@ -105,6 +105,8 @@ want main and sub to be on different lines */
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 16.4px;
+  /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
+  animation: moveInRight 1s ease-out;
 }
 
 /* CSS Animation for the heading-primary */
@@ -126,6 +128,21 @@ want main and sub to be on different lines */
   100% {
     opacity: 1;
     /* at the end it should be exactly in the the center and should not translate */
+    transform: translate(0);
+  }
+}
+
+/* this is for .heading-primary-sub which needs to move in from right when page is loaded or reloaded */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
     transform: translate(0);
   }
 }
