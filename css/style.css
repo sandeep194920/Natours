@@ -173,7 +173,16 @@ want main and sub to be on different lines */
   padding: 15px 40px;
   /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
   display: inline-block;
+  border-radius: 100px; /* will remain same for higher numbers too . will stop after 40px*/
 }
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
 .btn-white {
   background-color: #fff;
   color: #777;
