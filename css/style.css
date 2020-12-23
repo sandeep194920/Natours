@@ -158,6 +158,20 @@ want main and sub to be on different lines */
     transform: translate(0);
   }
 }
+
+/* this is for .btn-white which appears from bottom on the header when page loads or reloads*/
+@keyframes moveInBottom {
+  /* for 0% to be applied before animation starts (when having delay mentioned in animation), use animation-fill-mode like below; */
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /* button */
 /* we are using a - anchor tag for button link  */
 /* a - has 4 states - link, visited, active and hover */
@@ -234,4 +248,12 @@ want main and sub to be on different lines */
   transform: scaleX(1.4) scaleY(1.6);
   /* At this point we want the transform to work with ease-out property smoothly in one second, so we give translate property for it's parent in btn and link this transform there */
   opacity: 0;
+}
+
+/* Since we will have many btns later we will need this animation only to this btn now */
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
+  /* Always remember you might want to use fill-mode when using delay for this reason */
+  animation-fill-mode: backwards;
 }
