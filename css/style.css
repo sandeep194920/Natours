@@ -196,3 +196,20 @@ want main and sub to be on different lines */
   background-color: #fff;
   color: #777;
 }
+
+/* for fading out on hover functionality, we use pseudo element ::after */
+/* checkout my codepen https://codepen.io/sandeep194920-the-flexboxer/pen/MWjEpXp */
+
+/* Note, we need this after content to be exactly like our btn and sits behind it. We scale it to be bigger than btn in animation */
+.btn::after {
+  content: ""; /*mandatory field in ::after*/
+  display: inline-block; /* we want it to be exactly same as our btn display*/
+  /* width and height will be same as the btn (100% of btn is the btn width and height itself */
+  height: 100%;
+  width: 100%;
+  border-radius: 100px; /* this should also be same as btn so it exactly sits behind the btn*/
+}
+/* this animation should apply to only btn-white hence we define it below */
+.btn-white::after {
+  background-color: white;
+}
