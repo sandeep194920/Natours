@@ -180,6 +180,9 @@ want main and sub to be on different lines */
   /* there might be a confusion about why this must be in link/visited state, but that's how it should be */
   /* we define transition here and related transofrm will be specified as below in hover and active states */
   transition: all 0.2s;
+
+  /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
+  position: relative;
 }
 .btn:hover {
   transform: translateY(-3px);
@@ -199,6 +202,7 @@ want main and sub to be on different lines */
 
 /* for fading out on hover functionality, we use pseudo element ::after */
 /* checkout my codepen https://codepen.io/sandeep194920-the-flexboxer/pen/MWjEpXp */
+/* Also, https://codepen.io/sandeep194920-the-flexboxer/pen/jOMGmQx */
 
 /* Note, we need this after content to be exactly like our btn and sits behind it. We scale it to be bigger than btn in animation */
 .btn::after {
@@ -208,8 +212,26 @@ want main and sub to be on different lines */
   height: 100%;
   width: 100%;
   border-radius: 100px; /* this should also be same as btn so it exactly sits behind the btn*/
+
+  /* till this point, this btn::after looks as the part of btn itself but we want it to be behind this btn so position should be absolute */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* This should not appear in front because it hides the title of btn so we set negetive z-index  */
+  z-index: -1;
+
+  /* tranition - using it for transform to take effect which is written in hover::after state below */
+  transition: all 0.4s ease-out;
 }
 /* this animation should apply to only btn-white hence we define it below */
 .btn-white::after {
   background-color: white;
+}
+
+/* when we hover the btn, we need the ::after content to take effect */
+.btn:hover::after {
+  /* we want the element to grow bigger */
+  transform: scaleX(1.4) scaleY(1.6);
+  /* At this point we want the transform to work with ease-out property smoothly in one second, so we give translate property for it's parent in btn and link this transform there */
+  opacity: 0;
 }
