@@ -7,7 +7,10 @@ Dark green: #28b485
 
 */
 /* this is the first thing you do. Each and every element in css will apply this. This removes default margins and paddings on any element like h1 or p */
-* {
+/* its better to apply ::after and ::before pseudo elements on * (all) and set them as well to defaults to avoid any strange behavior */
+*,
+*::after,
+*::before {
   margin: 0px;
   padding: 0;
   /* inheriting from body. It means, all elements ( all elemetns because we are defining inside *) will inherit border-box */
