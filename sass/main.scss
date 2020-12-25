@@ -3,6 +3,7 @@ $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black: #000;
 /* this is the first thing you do. Each and every element in css will apply this. This removes default margins and paddings on any element like h1 or p */
 /* its better to apply ::after and ::before pseudo elements on * (all) and set them as well to defaults to avoid any strange behavior */
 *,
@@ -61,14 +62,23 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* setting this element to relative because this is parent element to logo-box and text-box which are the child and absolutely positioned */
   position: relative;
+
+  // replacing .header with & because, & means header up unitl this point
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
 }
 
 /* Logo */
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+// We can write in sassy way above. Let's comment this here
+// .header__logo-box {
+//   position: absolute;
+//   top: 4rem;
+//   left: 4rem;
+// }
+
 .header__logo {
   /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
   /* The same applies of width. If we set width, then height will be set automatically by browser */
@@ -215,12 +225,12 @@ want main and sub to be on different lines */
 .btn:hover {
   transform: translateY(-0.3rem);
   /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
 }
 
 .btn--white {
