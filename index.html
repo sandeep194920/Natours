@@ -16,21 +16,25 @@
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
+    <!-- Let's name all the element classes as per BEM methodology -->
+    <!-- class header can be reused anywhere so we can consider it as block level in BEM -->
     <header class="header">
-      <div class="logo-box">
+      <div class="header__logo-box">
         <!-- give meaningful names to alt because that not only appears if img is not present, 
                but also helps Search Engine Optimization  pick our webpage-->
-        <img src="img/logo-white.png" alt="Logo" class="logo" />
+        <img src="img/logo-white.png" alt="Logo" class="header__logo" />
       </div>
 
-      <div class="text-box">
+      <div class="header__text-box">
         <!-- Title of our webpage. It's good to be in h1 because of SEO -->
+        <!-- class heading-primary can be reused anywhere so we can consider it as block level in BEM -->
         <h1 class="heading-primary">
-          <span class="heading-primary-main">Outdoors</span>
-          <span class="heading-primary-sub">is where life happens</span>
+          <!-- main and sub are just the modifications of heading-primary so they are treated as modifier part of BEM -->
+          <span class="heading-primary--main">Outdoors</span>
+          <span class="heading-primary--sub">is where life happens</span>
         </h1>
-
-        <a href="#" class="btn btn-white btn-animated">Discover our tours</a>
+        <!-- btn-white and btn-aimated are just the modifications of heading-primary so they are treated as modifier part of BEM -->
+        <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
       </div>
     </header>
   </body>

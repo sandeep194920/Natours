@@ -66,19 +66,19 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
 }
 
 /* Logo */
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-.logo {
+.header__logo {
   /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
   /* The same applies of width. If we set width, then height will be set automatically by browser */
   height: 3.5rem;
 }
 
 /* Text-box */
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -107,7 +107,7 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
 }
 /* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
 want main and sub to be on different lines */
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400; /*by default h1 has higher font-weight;*/
@@ -127,7 +127,7 @@ want main and sub to be on different lines */
   
   */
 }
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -225,7 +225,7 @@ want main and sub to be on different lines */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -254,7 +254,7 @@ want main and sub to be on different lines */
   transition: all 0.4s ease-out;
 }
 /* this animation should apply to only btn-white hence we define it below */
-.btn-white::after {
+.btn--white::after {
   background-color: white;
 }
 
@@ -267,7 +267,7 @@ want main and sub to be on different lines */
 }
 
 /* Since we will have many btns later we will need this animation only to this btn now */
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
   /* Always remember you might want to use fill-mode when using delay for this reason */
