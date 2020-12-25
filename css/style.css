@@ -12,14 +12,22 @@ Dark green: #28b485
   padding: 0;
   box-sizing: border-box;
 }
+/* font-size (rem and px) guide lines below */
+/* We're going to convert all absolute px units to relative rem units. rem is relative to the base/root font size mentioned in html (we can also mention in body, but lets do in html below) */
+/* Note that the base font size by browser is 16px, but lets keep it for 10px now and design everything according to this because it will be easy for our calculations. 10px = 1rem */
+/* Finally we should change 10px to % which is 10px/16px (62.5%) because % will be relative to the browser's font-size which makes user to change it (by zooming-in or out) easily. If we set it to 10px then user cannot change it which is bad */
+html {
+  /* root font-size */
+  font-size: 10px;
+}
 
 body {
   font-family: "Lato" sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem;
 }
 
 .header {
@@ -53,13 +61,13 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
 /* Logo */
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 .logo {
   /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
   /* The same applies of width. If we set width, then height will be set automatically by browser */
-  height: 35px;
+  height: 3.5rem;
 }
 
 /* Text-box */
@@ -88,15 +96,15 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   backface-visibility: hidden;
 
   /* margin for button btn */
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 /* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
 want main and sub to be on different lines */
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400; /*by default h1 has higher font-weight;*/
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   /* applying css animation - making use of defined keyframe for fading in from left*/
   animation-name: moveInLeft;
   animation-duration: 1s; /* this long animation should take*/
@@ -114,9 +122,9 @@ want main and sub to be on different lines */
 }
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 16.4px;
+  letter-spacing: 1.64rem;
   /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
   animation: moveInRight 1s ease-out;
 }
@@ -130,11 +138,11 @@ want main and sub to be on different lines */
   0% {
     opacity: 0; /* at the beginning it should be invisible */
     /* at the beginning it should be more in the left so translate -100px */
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   /* in between. can have more steps to it*/
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
   /* finish */
   100% {
@@ -148,10 +156,10 @@ want main and sub to be on different lines */
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
   100% {
     opacity: 1;
@@ -164,7 +172,7 @@ want main and sub to be on different lines */
   /* for 0% to be applied before animation starts (when having delay mentioned in animation), use animation-fill-mode like below; */
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
   100% {
     opacity: 1;
@@ -184,10 +192,11 @@ want main and sub to be on different lines */
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
   display: inline-block;
-  border-radius: 100px; /* will remain same for higher numbers too . will stop after 40px*/
+  border-radius: 10rem; /* will remain same for higher numbers too . will stop after 40px*/
+  font-size: 1.6rem;
 
   /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
   /* all here specifies - all effects like on hover transform and active transform should all apply here */
@@ -199,14 +208,14 @@ want main and sub to be on different lines */
   position: relative;
 }
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-0.3rem);
   /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
@@ -225,7 +234,7 @@ want main and sub to be on different lines */
   /* width and height will be same as the btn (100% of btn is the btn width and height itself */
   height: 100%;
   width: 100%;
-  border-radius: 100px; /* this should also be same as btn so it exactly sits behind the btn*/
+  border-radius: 10rem; /* this should also be same as btn so it exactly sits behind the btn*/
 
   /* till this point, this btn::after looks as the part of btn itself but we want it to be behind this btn so position should be absolute */
   position: absolute;
