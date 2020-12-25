@@ -10,7 +10,8 @@ Dark green: #28b485
 * {
   margin: 0px;
   padding: 0;
-  box-sizing: border-box;
+  /* inheriting from body. It means, all elements ( all elemetns because we are defining inside *) will inherit border-box */
+  box-sizing: inherit;
 }
 /* font-size (rem and px) guide lines below */
 /* We're going to convert all absolute px units to relative rem units. rem is relative to the base/root font size mentioned in html (we can also mention in body, but lets do in html below) */
@@ -20,6 +21,8 @@ html {
   /* root font-size */
   /* it should be in % rather than px so that user can change it in the browser when zooms in or out. Default is 16px but we need a % equal to 10px which is 10/16 which is 62.5% */
   font-size: 62.5%;
+  /* instead of writing this border-box setting in *, you should use here so that you can use inherit in * for all elements to inherit from body */
+  box-sizing: border-box;
 }
 
 body {
