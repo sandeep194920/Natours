@@ -16,4 +16,20 @@
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
   }
+
+  // columns which are inside of .row
+  .col-1-of-2 {
+    float: left; // first one will float left and then next will follow it. no need any right float here
+
+    //   we have a grid like this, to get the
+    //   --------------- gutter  ---------------
+    //   how to get one column here? we have 100% - gutter = 2 columns. So 1 column is (100%-gutter)/2
+    //   in sass we can do this calculation for width of one column. Note that in the calc function we need to use # like below when we use variables
+
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    background-color: orangered;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
 }
