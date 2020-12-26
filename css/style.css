@@ -48,32 +48,30 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* setting this element to relative because this is parent element to logo-box and text-box which are the child and absolutely positioned */
-  position: relative; }
+  position: relative;
+  /* Text-box */ }
   .header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem; }
+  .header__logo {
+    /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
+    /* The same applies of width. If we set width, then height will be set automatically by browser */
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* The text-box's center needs to be top-40 and left-50 and not the text-box's start. This can be done by adding transform translate */
+    /* translate moves the text-box itself as defined inside translate */
+    transform: translate(-50%, -50%);
+    /* X = -50% and Y=-50%, so that it's center will be aligned properly  */
+    /* this is used so that the .btn (anchor tag) which is inline element centers itself in this block */
+    text-align: center;
+    /* margin:auto vs text-align: center;; */
+    /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */ }
 
 /* Logo */
-.header__logo {
-  /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
-  /* The same applies of width. If we set width, then height will be set automatically by browser */
-  height: 3.5rem; }
-
-/* Text-box */
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* The text-box's center needs to be top-40 and left-50 and not the text-box's start. This can be done by adding transform translate */
-  /* translate moves the text-box itself as defined inside translate */
-  transform: translate(-50%, -50%);
-  /* X = -50% and Y=-50%, so that it's center will be aligned properly  */
-  /* this is used so that the .btn (anchor tag) which is inline element centers itself in this block */
-  text-align: center;
-  /* margin:auto vs text-align: center;; */
-  /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */ }
-
 /* Heading */
 .heading-primary {
   color: #fff;
@@ -82,37 +80,35 @@ Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 
   /* make sure you use this when you use animations */
   backface-visibility: hidden;
   /* margin for button btn */
-  margin-bottom: 6rem; }
-
-/* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
-want main and sub to be on different lines */
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  /*by default h1 has higher font-weight;*/
-  letter-spacing: 3.5rem;
-  /* applying css animation - making use of defined keyframe for fading in from left*/
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /* this long animation should take*/
-  /* animation-timing-function specifies how the animation effect should be with in the animation-duration time 1 second*/
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
-  animation-timing-function: ease-out;
-  /* Additional animation properties */
-  /* 
-  animation-left: 3s   - Animation will start after 3seconds
-  animation-iteration-count: 3;  - Animation will happen for 3 times
-  
-  */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.64rem;
-  /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
-  animation: moveInRight 1s ease-out; }
+  margin-bottom: 6rem;
+  /* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
+want main and sub to be on different lines */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    /*by default h1 has higher font-weight;*/
+    letter-spacing: 3.5rem;
+    /* applying css animation - making use of defined keyframe for fading in from left*/
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* this long animation should take*/
+    /* animation-timing-function specifies how the animation effect should be with in the animation-duration time 1 second*/
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
+    animation-timing-function: ease-out;
+    /* Additional animation properties */
+    /* 
+    animation-left: 3s   - Animation will start after 3seconds
+    animation-iteration-count: 3;  - Animation will happen for 3 times
+    
+    */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.64rem;
+    /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
+    animation: moveInRight 1s ease-out; }
 
 /* CSS Animation for the heading-primary */
 /* this is for .heading-primary-main which needs to move in from left when page is loaded or reloaded */
@@ -155,80 +151,73 @@ want main and sub to be on different lines */
     transform: translate(0); } }
 
 /* button */
-/* we are using a - anchor tag for button link  */
-/* a - has 4 states - link, visited, active and hover */
-/* link - normal state of a */
-/* visited - once user visites it, you might have noticed it becomes violet color from blue after clicking the link */
-/* active - currently clicked link state */
-/* using pseudo selectors we can define these states as shown */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
-  display: inline-block;
-  border-radius: 10rem;
-  /* will remain same for higher numbers too . will stop after 40px*/
-  font-size: 1.6rem;
-  /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
-  /* all here specifies - all effects like on hover transform and active transform should all apply here */
-  /* there might be a confusion about why this must be in link/visited state, but that's how it should be */
-  /* we define transition here and related transofrm will be specified as below in hover and active states */
-  transition: all 0.2s;
-  /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
-  position: relative; }
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* for fading out on hover functionality, we use pseudo element ::after */
-/* checkout my codepen https://codepen.io/sandeep194920-the-flexboxer/pen/MWjEpXp */
-/* Also, https://codepen.io/sandeep194920-the-flexboxer/pen/jOMGmQx */
-/* Note, we need this after content to be exactly like our btn and sits behind it. We scale it to be bigger than btn in animation */
-.btn::after {
-  content: "";
-  /*mandatory field in ::after*/
-  display: inline-block;
-  /* we want it to be exactly same as our btn display*/
-  /* width and height will be same as the btn (100% of btn is the btn width and height itself */
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  /* this should also be same as btn so it exactly sits behind the btn*/
-  /* till this point, this btn::after looks as the part of btn itself but we want it to be behind this btn so position should be absolute */
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* This should not appear in front because it hides the title of btn so we set negetive z-index  */
-  z-index: -1;
-  /* tranition - using it for transform to take effect which is written in hover::after state below */
-  transition: all 0.4s ease-out; }
-
-/* this animation should apply to only btn-white hence we define it below */
-.btn--white::after {
-  background-color: white; }
-
-/* when we hover the btn, we need the ::after content to take effect */
-.btn:hover::after {
-  /* we want the element to grow bigger */
-  transform: scaleX(1.4) scaleY(1.6);
-  /* At this point we want the transform to work with ease-out property smoothly in one second, so we give translate property for it's parent in btn and link this transform there */
-  opacity: 0; }
-
-/* Since we will have many btns later we will need this animation only to this btn now */
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
-  /* Always remember you might want to use fill-mode when using delay for this reason */
-  animation-fill-mode: backwards; }
+.btn {
+  /* we are using a - anchor tag for button link  */
+  /* a - has 4 states - link, visited, active and hover */
+  /* link - normal state of a */
+  /* visited - once user visites it, you might have noticed it becomes violet color from blue after clicking the link */
+  /* active - currently clicked link state */
+  /* using pseudo selectors we can define these states as shown */
+  /* for fading out on hover functionality, we use pseudo element ::after */
+  /* checkout my codepen https://codepen.io/sandeep194920-the-flexboxer/pen/MWjEpXp */
+  /* Also, https://codepen.io/sandeep194920-the-flexboxer/pen/jOMGmQx */
+  /* Note, we need this after content to be exactly like our btn and sits behind it. We scale it to be bigger than btn in animation */
+  /* when we hover the btn, we need the ::after content to take effect */
+  /* Since we will have many btns later we will need this animation only to this btn now */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
+    display: inline-block;
+    border-radius: 10rem;
+    /* will remain same for higher numbers too . will stop after 40px*/
+    font-size: 1.6rem;
+    /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
+    /* all here specifies - all effects like on hover transform and active transform should all apply here */
+    /* there might be a confusion about why this must be in link/visited state, but that's how it should be */
+    /* we define transition here and related transofrm will be specified as below in hover and active states */
+    transition: all 0.2s;
+    /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
+    position: relative; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777;
+    /* this animation should apply to only btn-white hence we define it below */ }
+    .btn--white::after {
+      background-color: white; }
+  .btn::after {
+    content: "";
+    /*mandatory field in ::after*/
+    display: inline-block;
+    /* we want it to be exactly same as our btn display*/
+    /* width and height will be same as the btn (100% of btn is the btn width and height itself */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* this should also be same as btn so it exactly sits behind the btn*/
+    /* till this point, this btn::after looks as the part of btn itself but we want it to be behind this btn so position should be absolute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* This should not appear in front because it hides the title of btn so we set negetive z-index  */
+    z-index: -1;
+    /* tranition - using it for transform to take effect which is written in hover::after state below */
+    transition: all 0.4s ease-out; }
+  .btn:hover::after {
+    /* we want the element to grow bigger */
+    transform: scaleX(1.4) scaleY(1.6);
+    /* At this point we want the transform to work with ease-out property smoothly in one second, so we give translate property for it's parent in btn and link this transform there */
+    opacity: 0; }
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
+    /* Always remember you might want to use fill-mode when using delay for this reason */
+    animation-fill-mode: backwards; }
