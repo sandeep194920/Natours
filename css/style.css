@@ -224,3 +224,9 @@ body {
     /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */ }
 
 /* Logo */
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
