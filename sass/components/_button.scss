@@ -1,0 +1,92 @@
+// contains reusable component - button in this case
+
+/* button */
+
+.btn {
+  /* we are using a - anchor tag for button link  */
+  /* a - has 4 states - link, visited, active and hover */
+  /* link - normal state of a */
+  /* visited - once user visites it, you might have noticed it becomes violet color from blue after clicking the link */
+  /* active - currently clicked link state */
+
+  /* using pseudo selectors we can define these states as shown */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
+    display: inline-block;
+    border-radius: 10rem; /* will remain same for higher numbers too . will stop after 40px*/
+    font-size: 1.6rem;
+
+    /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
+    /* all here specifies - all effects like on hover transform and active transform should all apply here */
+    /* there might be a confusion about why this must be in link/visited state, but that's how it should be */
+    /* we define transition here and related transofrm will be specified as below in hover and active states */
+    transition: all 0.2s;
+
+    /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
+    position: relative;
+  }
+  &:hover {
+    transform: translateY(-0.3rem);
+    /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    /* this animation should apply to only btn-white hence we define it below */
+    &::after {
+      background-color: white;
+    }
+  }
+
+  /* for fading out on hover functionality, we use pseudo element ::after */
+  /* checkout my codepen https://codepen.io/sandeep194920-the-flexboxer/pen/MWjEpXp */
+  /* Also, https://codepen.io/sandeep194920-the-flexboxer/pen/jOMGmQx */
+
+  /* Note, we need this after content to be exactly like our btn and sits behind it. We scale it to be bigger than btn in animation */
+  &::after {
+    content: ""; /*mandatory field in ::after*/
+    display: inline-block; /* we want it to be exactly same as our btn display*/
+    /* width and height will be same as the btn (100% of btn is the btn width and height itself */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem; /* this should also be same as btn so it exactly sits behind the btn*/
+
+    /* till this point, this btn::after looks as the part of btn itself but we want it to be behind this btn so position should be absolute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* This should not appear in front because it hides the title of btn so we set negetive z-index  */
+    z-index: -1;
+
+    /* tranition - using it for transform to take effect which is written in hover::after state below */
+    transition: all 0.4s ease-out;
+  }
+
+  /* when we hover the btn, we need the ::after content to take effect */
+  &:hover::after {
+    /* we want the element to grow bigger */
+    transform: scaleX(1.4) scaleY(1.6);
+    /* At this point we want the transform to work with ease-out property smoothly in one second, so we give translate property for it's parent in btn and link this transform there */
+    opacity: 0;
+  }
+
+  /* Since we will have many btns later we will need this animation only to this btn now */
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
+    /* Always remember you might want to use fill-mode when using delay for this reason */
+    animation-fill-mode: backwards;
+  }
+}

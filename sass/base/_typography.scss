@@ -1,0 +1,53 @@
+//contains related to typography styles
+
+/* Heading */
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  /* to make the animation work without shaking. Why this works is not clearly known at this point of time */
+  /* make sure you use this when you use animations */
+  backface-visibility: hidden;
+
+  /* margin for button btn */
+  margin-bottom: 6rem;
+
+  /* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
+  want main and sub to be on different lines */
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400; /*by default h1 has higher font-weight;*/
+    letter-spacing: 3.5rem;
+    /* applying css animation - making use of defined keyframe for fading in from left*/
+    animation-name: moveInLeft;
+    animation-duration: 1s; /* this long animation should take*/
+
+    /* animation-timing-function specifies how the animation effect should be with in the animation-duration time 1 second*/
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
+    animation-timing-function: ease-out;
+
+    /* Additional animation properties */
+    /* 
+      animation-left: 3s   - Animation will start after 3seconds
+      animation-iteration-count: 3;  - Animation will happen for 3 times
+      
+      */
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.64rem;
+    /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
+    animation: moveInRight 1s ease-out;
+  }
+}
+
+body {
+  font-family: "Lato" sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+}

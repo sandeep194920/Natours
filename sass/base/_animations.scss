@@ -1,0 +1,52 @@
+// contains animation properties
+
+/* CSS Animation for the heading-primary */
+
+/* this is for .heading-primary-main which needs to move in from left when page is loaded or reloaded */
+@keyframes moveInLeft {
+  /* before the animation start. Can be called anything, here we call as 0% */
+  /* start */
+  0% {
+    opacity: 0; /* at the beginning it should be invisible */
+    /* at the beginning it should be more in the left so translate -100px */
+    transform: translateX(-10rem);
+  }
+  /* in between. can have more steps to it*/
+  80% {
+    transform: translateX(1rem);
+  }
+  /* finish */
+  100% {
+    opacity: 1;
+    /* at the end it should be exactly in the the center and should not translate */
+    transform: translate(0);
+  }
+}
+
+/* this is for .heading-primary-sub which needs to move in from right when page is loaded or reloaded */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* this is for .btn-white which appears from bottom on the header when page loads or reloads*/
+@keyframes moveInBottom {
+  /* for 0% to be applied before animation starts (when having delay mentioned in animation), use animation-fill-mode like below; */
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
