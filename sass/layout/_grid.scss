@@ -32,4 +32,7 @@
       margin-right: $gutter-horizontal;
     }
   }
+  @include clearfix;
 }
+// clearfix is included in mixin like this
+// row::after{}

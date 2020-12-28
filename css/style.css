@@ -236,3 +236,7 @@ body {
     background-color: orangered; }
     .row .col-1-of-2:not(:last-child) {
       margin-right: 6rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
