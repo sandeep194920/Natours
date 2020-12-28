@@ -87,12 +87,12 @@ body {
 
 // used in about section for the first time
 .heading-tertiary {
-  font-size: 1.6rem;
+  font-size: $default-font-size;
   font-weight: 700;
   text-transform: uppercase;
 }
 .paragraph {
-  font-size: 1.6rem;
+  font-size: $default-font-size;
   // it makes sense to have some margin-bottom: for every paragraph except the last one
   &:not(:last-child) {
     margin-bottom: 3rem;

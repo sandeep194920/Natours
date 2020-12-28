@@ -18,7 +18,7 @@
     /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
     display: inline-block;
     border-radius: 10rem; /* will remain same for higher numbers too . will stop after 40px*/
-    font-size: 1.6rem;
+    font-size: $default-font-size;
 
     /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
     /* all here specifies - all effects like on hover transform and active transform should all apply here */
@@ -88,5 +88,22 @@
     /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
     /* Always remember you might want to use fill-mode when using delay for this reason */
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block; // a tag is block by default
+    text-decoration: none;
+    border-bottom: 0.1rem solid $color-primary;
+    padding: 0.3rem;
+  }
+
+  &:hover {
+  }
+  &:active {
   }
 }

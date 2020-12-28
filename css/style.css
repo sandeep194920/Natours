@@ -213,6 +213,14 @@ body {
     /* Always remember you might want to use fill-mode when using delay for this reason */
     animation-fill-mode: backwards; }
 
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 0.1rem solid #55c57a;
+  padding: 0.3rem; }
+
 .header {
   height: 95vh;
   /* we have a bg image. We need to set green color on top of it, so we specify a gradiant. Gradiant will come first coz it should stay on top of bg image */
