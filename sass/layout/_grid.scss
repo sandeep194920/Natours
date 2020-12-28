@@ -17,28 +17,27 @@
     margin-bottom: $gutter-vertical;
   }
 
+  // if you look at last two commits, the background-color and &:not(:last-child) is repeating so to avoid that we can make use of attributes like below. We can ofcourse use other techniques like using another class and specifying these there, but lets learn about attributes here
+  // this means to say -> select all the elements having the class starting with col-.  If we write class* then select any classes that CONTAIN col-. $ means END with col-
+  [class^="col-"] {
+    background-color: orangered;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+    float: left; // first one will float left and then next will follow it. no need any right float here
+  }
+
   // columns which are inside of .row
   .col-1-of-2 {
-    float: left; // first one will float left and then next will follow it. no need any right float here
-
     //   we have a grid like this, to get the
     //   --------------- gutter  ---------------
     //   how to get one column here? we have 100% - gutter = 2 columns. So 1 column is (100%-gutter)/2
     //   in sass we can do this calculation for width of one column. Note that in the calc function we need to use # like below when we use variables
 
     width: calc((100% - #{$gutter-horizontal}) / 2);
-    background-color: orangered;
-    &:not(:last-child) {
-      margin-right: $gutter-horizontal;
-    }
   }
   .col-1-of-3 {
-    float: left;
     width: calc((100% - 2 *#{$gutter-horizontal}) / 3);
-    &:not(:last-child) {
-      margin-right: $gutter-horizontal;
-    }
-    background-color: orangered;
   }
   @include clearfix;
 }
