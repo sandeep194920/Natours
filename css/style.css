@@ -100,7 +100,7 @@ body {
     animation: moveInRight 1s ease-out; }
 
 body {
-  font-family: "Lato" sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
@@ -112,7 +112,10 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
-  display: inline-block; }
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: 0; }
 
 /* button */
 .btn {

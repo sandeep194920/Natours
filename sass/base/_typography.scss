@@ -44,7 +44,7 @@
 }
 
 body {
-  font-family: "Lato" sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
@@ -65,4 +65,13 @@ body {
   );
   // now at this point the background occupies the entire block because this is a block element, so we change it to inline block as we want to fit background to the content
   display: inline-block;
+  // now the motive is to match the text color to the background color which is linear gradient.
+  // we do this using two props below. -webkit-background-clip: text; and color:transparent.
+
+  // -webkit-background-clip: text; allows to clip/ cut the background exactly behind the text. So imagine that the color is behind our text
+  // and at this point we can't see the background because text is covering that so we make the text transparent to let only the background show up
+
+  -webkit-background-clip: text;
+  color: transparent; // making this invisible so that background becomes visible
+  background-clip: 0; // this is not necessary but adding to avoid the error caused by webkit above
 }
