@@ -1,0 +1,8 @@
+// section-about style is written here in pages/home becuse - about section appears only in the home page and no where else in the website
+
+.section-about {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0;
+  //   At this point before specifying margin, we have a header which is 95vh clipped to 75vh. So remaining 20 must be adjusted with the margin so that the grey color is covered right below the header
+  margin-top: -20vh;
+}

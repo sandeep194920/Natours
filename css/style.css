@@ -251,3 +251,8 @@ body {
     content: "";
     display: table;
     clear: both; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
