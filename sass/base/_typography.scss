@@ -51,3 +51,18 @@ body {
   color: $color-grey-dark;
   padding: 3rem;
 }
+
+// heading secondary is related to typography so we put here
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  // to get a gradient text where the text starts with light green and ends with dark green, we do this
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  // now at this point the background occupies the entire block because this is a block element, so we change it to inline block as we want to fit background to the content
+  display: inline-block;
+}
