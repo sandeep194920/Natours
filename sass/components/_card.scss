@@ -1,0 +1,10 @@
+.card {
+  background-color: orangered;
+  height: 50rem;
+  // giving transition for transform to work smoothly. In this case, without transition, you would not see hover transform rotation because it will be so fast
+  transition: all 0.8s;
+  // now when card is hovered, it should be rotated half of a circle which is 180deg in y direction. Imagine keeping your finger in the top-middle(y axis) of the card and then rotate in anti-clockwise direction.
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
