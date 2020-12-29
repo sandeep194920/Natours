@@ -286,8 +286,15 @@ body {
     transition: all 0.8s;
     color: #fff;
     font-size: 2rem; }
-  .card:hover .card__side {
+    .card__side--front {
+      background-color: orangered; }
+    .card__side--back {
+      background-color: green;
+      transform: rotateY(180deg); }
+  .card:hover .card__side--front {
     transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
 
 .row {
   max-width: 114rem;

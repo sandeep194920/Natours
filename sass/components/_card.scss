@@ -11,12 +11,26 @@
     // testing color and font
     color: #fff;
     font-size: 2rem;
+
+    &--front {
+      background-color: orangered;
+    }
+
+    &--back {
+      background-color: green;
+      transform: rotateY(180deg);
+    }
   }
 
   // now when card is hovered, it should be rotated half of a circle which is 180deg in y direction. Imagine keeping your finger in the top-middle(y axis) of the card and then rotate in anti-clockwise direction.
   // hover should be like .card:hover .card__side{transform: rotateY(180deg);}, meaning when card is hovered, it's side should rotate. We could directly apply hover on child, but later we might have multiple sides
-  &:hover &__side {
+  &:hover &__side--front {
     transform: rotateY(180deg);
+  }
+
+  // back side is aleady initially at 180deg so it should go back to 0 on hover
+  &:hover &__side--back {
+    transform: rotateY(0);
   }
 }
 // WHAT IS PERSPECTIVE?
