@@ -42,7 +42,7 @@
     <main>
       <!-- where do we put the css related to about section? In pages/home because it wont appear anywhere else except home -->
       <section class="section-about">
-        <!-- the div u-center-text is just a reusable utility class helps to center the text. Because this div is a block element so we can use margin auto on heading secondary -->
+        <!-- the div u-center-text is just a reusable utility class helps to center the text. Because this div is a block element so we can use text-align center on heading secondary. We are not using margin-auto because we have changed h2 from block to inlin-block element-->
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">
             Exciting tours for adventurous people
@@ -160,6 +160,19 @@
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- tours section -->
+      <section class="section-tours">
+        <!-- the div u-center-text is just a reusable utility class helps to center the text. Because this div is a block element so we can use margin auto on heading secondary -->
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Most popular tours</h2>
+        </div>
+        <div class="row">
+          <div class="col-1-of-3">col 1 of 3</div>
+          <div class="col-1-of-3">col 1 of 3</div>
+          <div class="col-1-of-3">col 1 of 3</div>
         </div>
       </section>
     </main>
