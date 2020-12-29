@@ -28,6 +28,9 @@
     // we need back-face-visibility hidden so that it hides the back part when rotated.
     backface-visibility: hidden;
 
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
     &--front {
       background-color: white;
     }
