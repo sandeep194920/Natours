@@ -33,4 +33,7 @@
     // this skews the direct children (only .row holding the feature boxes in this case)  in opposite direction
     transform: skewY(7deg);
   }
+
+  // since the bg is skewed, we have a white space in the left top. Let's fix that by applying negative margin-top
+  margin-top: -10rem;
 }
