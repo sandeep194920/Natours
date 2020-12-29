@@ -17,4 +17,20 @@
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
+  // make the 3d shape of features section here.
+  // we can use the background-clip prop as we did it for header, but this is another trick we'll use now
+  transform: skewY(-7deg);
+  // at this point, the bg image is skewed to y direction, but along with that, all the boxes (feature-boxes) also skewed along with it.
+  // so we need to skew back the feature-boxes (direct children of this .section-features) to the opposite direction
+
+  // two ways we can do. one way is to go and do it on the feature-box class
+  // other way is to select the direct children of this .section-features  (which is the .row holding the feature-boxes) and skew it in opposite direction
+  // this second way is more effective because even if we add more content / feature-boxes some day then this would help
+
+  // selecting all direct children
+  // looks like - section-features > * . To select not only direct children but all the children (nested) we do & *
+  & > * {
+    // this skews the direct children (only .row holding the feature boxes in this case)  in opposite direction
+    transform: skewY(7deg);
+  }
 }
