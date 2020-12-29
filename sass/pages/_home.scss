@@ -37,3 +37,10 @@
   // since the bg is skewed, we have a white space in the left top. Let's fix that by applying negative margin-top
   margin-top: -10rem;
 }
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 50rem 0;
+  // to move up
+  margin-top: -10rem;
+}
