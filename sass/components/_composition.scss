@@ -27,10 +27,15 @@
     }
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.05) translateY(-0.5rem); //scales bigger and also moves a little in y direction
       box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
       z-index: 20; // higher than initial z-index 10, so this image will show up completely
       outline: 1.5rem solid $color-primary; //same like border. look above outline-offset for more explanation
     }
+  }
+
+  //   composition:hover composition__photo:not(:hover) -> When we hover composition then select the photo that is not hovered and decrease the size of not hovered photos
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.95);
   }
 }
