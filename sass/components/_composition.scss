@@ -8,6 +8,9 @@
     z-index: 10; //initially setting z-index. not necessary here actually. this is there so that we can increase this on hover and show the full image on hover later
     // for the animation effect, setting transition
     transition: all 0.2s;
+    // this is related to outline prop below applied on hover. outline is exactly like border. outline-offset provides a padding b/w border and content.
+    // we could've used border and padding, but we're simply using outline and outline-offset here
+    outline-offset: 2rem;
 
     &--p1 {
       left: 0;
@@ -27,6 +30,7 @@
       transform: scale(1.05);
       box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
       z-index: 20; // higher than initial z-index 10, so this image will show up completely
+      outline: 1.5rem solid $color-primary; //same like border. look above outline-offset for more explanation
     }
   }
 }
