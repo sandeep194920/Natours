@@ -1,10 +1,29 @@
 .card {
-  background-color: orangered;
-  height: 50rem;
-  // giving transition for transform to work smoothly. In this case, without transition, you would not see hover transform rotation because it will be so fast
-  transition: all 0.8s;
+  // perspective needs to be on parent (see expln below)
+  perspective: 150rem;
+  -moz-perspective: 150rem; // mozilla firefox will recognize the perspective with this
+
+  &__side {
+    background-color: orangered;
+    height: 50rem;
+    // giving transition for transform to work smoothly. In this case, without transition, you would not see hover transform rotation because it will be so fast
+    transition: all 0.8s;
+    // testing color and font
+    color: #fff;
+    font-size: 2rem;
+  }
+
   // now when card is hovered, it should be rotated half of a circle which is 180deg in y direction. Imagine keeping your finger in the top-middle(y axis) of the card and then rotate in anti-clockwise direction.
-  &:hover {
+  // hover should be like .card:hover .card__side{transform: rotateY(180deg);}, meaning when card is hovered, it's side should rotate. We could directly apply hover on child, but later we might have multiple sides
+  &:hover &__side {
     transform: rotateY(180deg);
   }
 }
+// WHAT IS PERSPECTIVE?
+// to get a proper 3d effect of rotation, and to feel realistic 3d effect, we need to have perspective defined on the parent
+// perspective should be a large number and it really is not clear how it behaves in every situation, so we need to trial and error with the perspective number
+// perspective should be applied on parent. Now, Card has 2 sides, so we need to make front side of the card as a child to the card and back side as another div(another child)
+//  Card (PARENT)
+//     / \
+//    /   \
+//  front  back   sides of card(children)
