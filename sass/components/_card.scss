@@ -3,22 +3,45 @@
   perspective: 150rem;
   -moz-perspective: 150rem; // mozilla firefox will recognize the perspective with this
 
+  // front-side and back-side of the card needs to be on top of one another, so we need this card container relatively positioned
+  position: relative;
+
+  // the position:absolute makes the parent (card) lose its height and the perspective on it no longer works. We can not apply clear-fix because it's not float problem. so the fix is we need to specify the same height to the parent as the sides
+  height: 50rem;
+
   &__side {
     background-color: orangered;
     height: 50rem;
     // giving transition for transform to work smoothly. In this case, without transition, you would not see hover transform rotation because it will be so fast
-    transition: all 0.8s;
+    transition: all 0.8s ease; // by default the timing function is linear, we'll change it to ease
     // testing color and font
     color: #fff;
     font-size: 2rem;
 
+    // front-side and back-side of the card needs to be on top of one another, so we need to postion it absolutely
+    position: absolute; // this makes the parent (card) lose its height and the perspective on it no longer works. We can not apply clear-fix because it's not float problem. so the fix is we need to specify the same height to the parent as this sides
+    top: 0;
+    left: 0;
+    // this fixes the width which scatters in absolute positioning
+    width: 100%;
+
+    // we need back-face-visibility hidden so that it hides the back part when rotated.
+    backface-visibility: hidden;
+
     &--front {
-      background-color: orangered;
+      background-color: white;
     }
 
     &--back {
-      background-color: green;
       transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
     }
   }
 
