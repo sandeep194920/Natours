@@ -5,8 +5,21 @@
   text-align: center;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  // transition  effect for all the transforms below
+  transition: all 0.3s;
   &__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(
+      to bottom,
+      $color-primary-light,
+      $color-primary-dark
+    );
+    -webkit-background-clip: text;
+    background-clip: 0;
+    color: transparent;
   }
-  &__text {
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
   }
 }
