@@ -94,7 +94,7 @@
     // since it should be on the bottom right of the image, lets make it absolute
     position: absolute;
     top: 12rem;
-    right: 2rem;
+    right: 3rem;
     text-align: right;
     // should divide into two blocks so lets reduce the width
     width: 75%;
@@ -102,6 +102,11 @@
   //   we could have nested this at the top, but lets consider this as a new block element in bem so that we can use this text design anywhere else later
   &__heading-span {
     padding: 1rem 1.5rem;
+    // box-decoration-break is used for the text which is one liner (manually splitted into two by padding) to be treated the same. I mean the above text in line one bg will be treated the same for the below as well with same padding and stuff so that we get a feel of the text being in two separate lines
+    // without webkit, even it's not supported in chrome currently
+    // in this case box=decoration-break:clone means, padding is applied to both (cloning)
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
     &-1 {
       background-image: linear-gradient(
         to right bottom,
