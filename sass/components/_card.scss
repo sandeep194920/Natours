@@ -58,6 +58,22 @@
   &:hover &__side--back {
     transform: rotateY(0);
   }
+
+  // Front side
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    &--1 {
+      // note that I should actually move two levels up for img -> ../../img but I am moving only one level because this is what css file gets. Two levels also works on a side note.
+      background-image: url(../img/nat-5.jpg);
+    }
+    &--2 {
+      background-image: url(../img/nat-5.jpg);
+    }
+    &--3 {
+      background-image: url(../img/nat-5.jpg);
+    }
+  }
 }
 // WHAT IS PERSPECTIVE?
 // to get a proper 3d effect of rotation, and to feel realistic 3d effect, we need to have perspective defined on the parent
