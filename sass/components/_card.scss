@@ -96,6 +96,19 @@
     top: 12rem;
     right: 2rem;
     text-align: right;
+    // should divide into two blocks so lets reduce the width
+    width: 75%;
+  }
+  //   we could have nested this at the top, but lets consider this as a new block element in bem so that we can use this text design anywhere else later
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    &-1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 1),
+        rgba($color-secondary-dark, 1)
+      );
+    }
   }
 }
 // WHAT IS PERSPECTIVE?

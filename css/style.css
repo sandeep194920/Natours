@@ -322,7 +322,12 @@ body {
     position: absolute;
     top: 12rem;
     right: 2rem;
-    text-align: right; }
+    text-align: right;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem; }
+    .card__heading-span-1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
 
 .row {
   max-width: 114rem;
