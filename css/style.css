@@ -307,9 +307,12 @@ body {
     transform: rotateY(0); }
   .card__picture {
     background-size: cover;
-    height: 23rem; }
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
     .card__picture--1 {
-      background-image: url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
     .card__picture--2 {
       background-image: url(../img/nat-5.jpg); }
     .card__picture--3 {
@@ -360,6 +363,7 @@ body {
     You can calculate this using - https://bennettfeely.com/clippy/
   Note: Triangle takes only 3 points and we can do this way - polygon(50% 0, 100% 100%, 0 100%)
     */
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* setting this element to relative because this is parent element to logo-box and text-box which are the child and absolutely positioned */
   position: relative;
