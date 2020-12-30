@@ -7,10 +7,10 @@
   position: relative;
 
   // the position:absolute makes the parent (card) lose its height and the perspective on it no longer works. We can not apply clear-fix because it's not float problem. so the fix is we need to specify the same height to the parent as the sides
-  height: 50rem;
+  height: $card-height;
 
   &__side {
-    height: 50rem;
+    height: $card-height;
     // giving transition for transform to work smoothly. In this case, without transition, you would not see hover transform rotation because it will be so fast
     transition: all 0.8s ease; // by default the timing function is linear, we'll change it to ease
 
@@ -113,6 +113,23 @@
         rgba($color-secondary-light, 1),
         rgba($color-secondary-dark, 1)
       );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 0.1rem solid $color-grey-light-2;
+        }
+      }
     }
   }
 }
