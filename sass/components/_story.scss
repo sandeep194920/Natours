@@ -7,6 +7,13 @@
   padding: 6rem;
   padding-left: 9rem; // this is added because we moved the shape -3rem so to compensate for that
   font-size: $default-font-size;
+  transform: skewX(-12deg);
+  // this would skey shape and text which are the direct children of story.
+  //   this would work only on text but not on the shape becuase shape has one transform applied to it already.
+  //   Currently, css supports only one transform prop so there is no way adding two. We hence separately on direct children apply the transform to 12 deg for it to get back to normal position
+  //   & > * {
+  //     transform: skewX(12deg);
+  //   }
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -27,11 +34,16 @@
     clip-path: circle(50% at 50% 50%);
 
     // we need some margin right to the shape, but since it's floated, let's not mess with margins but simply translate this shape to move a bit
-    transform: translateX(-3rem);
+    // look at the explanation for skew in story above
+    transform: translateX(-3rem) skewX(12deg);
   }
 
   //  image inside the circle
   &__img {
     height: 100%;
+  }
+  &__text {
+    // look at the explanation for skew in story above
+    transform: skewX(12deg);
   }
 }
