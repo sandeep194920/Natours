@@ -5,6 +5,7 @@
   background-color: $color-white;
   border-radius: 0.3rem;
   padding: 6rem;
+  padding-left: 9rem; // this is added because we moved the shape -3rem so to compensate for that
   font-size: $default-font-size;
   &__shape {
     width: 15rem;
@@ -25,5 +26,8 @@
     // the shape is currently rectangle, let's make it circle
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
+
+    // we need some margin right to the shape, but since it's floated, let's not mess with margins but simply translate this shape to move a bit
+    transform: translateX(-3rem);
   }
 }
