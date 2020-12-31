@@ -50,6 +50,16 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    /* this animation should apply to only btn-white hence we define it below */
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
   /* for fading out on hover functionality, we use pseudo element ::after */
   /* checkout my codepen https://codepen.io/sandeep194920-the-flexboxer/pen/MWjEpXp */
   /* Also, https://codepen.io/sandeep194920-the-flexboxer/pen/jOMGmQx */
