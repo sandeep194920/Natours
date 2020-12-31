@@ -7,47 +7,36 @@
     opacity: 0;
     /* at the beginning it should be invisible */
     /* at the beginning it should be more in the left so translate -100px */
-    transform: translateX(-10rem);
-  }
+    transform: translateX(-10rem); }
   /* in between. can have more steps to it*/
   80% {
-    transform: translateX(1rem);
-  }
+    transform: translateX(1rem); }
   /* finish */
   100% {
     opacity: 1;
     /* at the end it should be exactly in the the center and should not translate */
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 /* this is for .heading-primary-sub which needs to move in from right when page is loaded or reloaded */
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
-  }
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-1rem);
-  }
+    transform: translateX(-1rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 /* this is for .btn-white which appears from bottom on the header when page loads or reloads*/
 @keyframes moveInBottom {
   /* for 0% to be applied before animation starts (when having delay mentioned in animation), use animation-fill-mode like below; */
   0% {
     opacity: 0;
-    transform: translateY(3rem);
-  }
+    transform: translateY(3rem); }
   100% {
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 /* this is the first thing you do. Each and every element in css will apply this. This removes default margins and paddings on any element like h1 or p */
 /* its better to apply ::after and ::before pseudo elements on * (all) and set them as well to defaults to avoid any strange behavior */
@@ -57,8 +46,7 @@
   margin: 0px;
   padding: 0;
   /* inheriting from body. It means, all elements ( all elemetns because we are defining inside *) will inherit border-box */
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 /* font-size (rem and px) guide lines below */
 /* We're going to convert all absolute px units to relative rem units. rem is relative to the base/root font size mentioned in html (we can also mention in body, but lets do in html below) */
@@ -67,13 +55,11 @@
 html {
   /* root font-size . This defines what 1rem is - which is 10px */
   /* it should be in % rather than px so that user can change it in the browser when zooms in or out. Default is 16px but we need a % equal to 10px which is 10/16 which is 62.5% */
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 body {
   /* instead of writing this border-box setting in *, you should use here so that you can use inherit in * for all elements to inherit from body */
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 /* Heading */
 .heading-primary {
@@ -85,36 +71,33 @@ body {
   /* margin for button btn */
   margin-bottom: 6rem;
   /* We want the span element to take up entire block. By default span is an inline element. We make it block here coz we 
-  want main and sub to be on different lines */
-}
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  /*by default h1 has higher font-weight;*/
-  letter-spacing: 3.5rem;
-  /* applying css animation - making use of defined keyframe for fading in from left*/
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /* this long animation should take*/
-  /* animation-timing-function specifies how the animation effect should be with in the animation-duration time 1 second*/
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
-  animation-timing-function: ease-out;
-  /* Additional animation properties */
-  /* 
+  want main and sub to be on different lines */ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    /*by default h1 has higher font-weight;*/
+    letter-spacing: 3.5rem;
+    /* applying css animation - making use of defined keyframe for fading in from left*/
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* this long animation should take*/
+    /* animation-timing-function specifies how the animation effect should be with in the animation-duration time 1 second*/
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function */
+    animation-timing-function: ease-out;
+    /* Additional animation properties */
+    /* 
       animation-left: 3s   - Animation will start after 3seconds
       animation-iteration-count: 3;  - Animation will happen for 3 times
       
-      */
-}
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.64rem;
-  /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
-  animation: moveInRight 1s ease-out;
-}
+      */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.64rem;
+    /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
+    animation: moveInRight 1s ease-out; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -122,8 +105,7 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
-}
+  padding: 3rem; }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -135,45 +117,35 @@ body {
   color: transparent;
   background-clip: 0;
   letter-spacing: 0.2rem;
-  transition: all 0.2s;
-}
-.heading-secondary:hover {
-  transform: skewY(2deg) skewX(15deg) scale(1.1);
-  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
   font-size: 1.6rem;
   font-weight: 700;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 .paragraph {
-  font-size: 1.6rem;
-}
-.paragraph:not(:last-child) {
-  margin-bottom: 3rem;
-}
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center;
-}
+  text-align: center; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem;
-}
+  margin-bottom: 8rem; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem;
-}
+  margin-bottom: 1.5rem; }
 
 .u-margin-top-huge {
-  margin-top: 10rem;
-}
+  margin-top: 10rem; }
 
 .u-margin-top-big {
-  margin-top: 8rem;
-}
+  margin-top: 8rem; }
 
 /* button */
 .btn {
@@ -188,139 +160,116 @@ body {
   /* Also, https://codepen.io/sandeep194920-the-flexboxer/pen/jOMGmQx */
   /* Note, we need this after content to be exactly like our btn and sits behind it. We scale it to be bigger than btn in animation */
   /* when we hover the btn, we need the ::after content to take effect */
-  /* Since we will have many btns later we will need this animation only to this btn now */
-}
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
-  display: inline-block;
-  border-radius: 10rem;
-  /* will remain same for higher numbers too . will stop after 40px*/
-  font-size: 1.6rem;
-  /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
-  /* all here specifies - all effects like on hover transform and active transform should all apply here */
-  /* there might be a confusion about why this must be in link/visited state, but that's how it should be */
-  /* we define transition here and related transofrm will be specified as below in hover and active states */
-  transition: all 0.2s;
-  /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
-  position: relative;
-}
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-.btn--white {
-  background-color: #fff;
-  color: #777;
-  /* this animation should apply to only btn-white hence we define it below */
-}
-.btn--white::after {
-  background-color: white;
-}
-.btn--green {
-  background-color: #55c57a;
-  color: #fff;
-  /* this animation should apply to only btn-white hence we define it below */
-}
-.btn--green::after {
-  background-color: #55c57a;
-}
-.btn::after {
-  content: "";
-  /*mandatory field in ::after*/
-  display: inline-block;
-  /* we want it to be exactly same as our btn display*/
-  /* width and height will be same as the btn (100% of btn is the btn width and height itself */
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  /* this should also be same as btn so it exactly sits behind the btn*/
-  /* till this point, this btn::after looks as the part of btn itself but we want it to be behind this btn so position should be absolute */
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* This should not appear in front because it hides the title of btn so we set negetive z-index  */
-  z-index: -1;
-  /* tranition - using it for transform to take effect which is written in hover::after state below */
-  transition: all 0.4s ease-out;
-}
-.btn:hover::after {
-  /* we want the element to grow bigger */
-  transform: scaleX(1.4) scaleY(1.6);
-  /* At this point we want the transform to work with ease-out property smoothly in one second, so we give translate property for it's parent in btn and link this transform there */
-  opacity: 0;
-}
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
-  /* Always remember you might want to use fill-mode when using delay for this reason */
-  animation-fill-mode: backwards;
-}
+  /* Since we will have many btns later we will need this animation only to this btn now */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* this btn is an anchor tag and by default works as an inline element hence the styling will be off. So we need it as inline block */
+    display: inline-block;
+    border-radius: 10rem;
+    /* will remain same for higher numbers too . will stop after 40px*/
+    font-size: 1.6rem;
+    /* there are 2 types of using animation. One is by using keyframes like we did before and second one is by using transition prop */
+    /* all here specifies - all effects like on hover transform and active transform should all apply here */
+    /* there might be a confusion about why this must be in link/visited state, but that's how it should be */
+    /* we define transition here and related transofrm will be specified as below in hover and active states */
+    transition: all 0.2s;
+    /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
+    position: relative; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777;
+    /* this animation should apply to only btn-white hence we define it below */ }
+    .btn--white::after {
+      background-color: white; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff;
+    /* this animation should apply to only btn-white hence we define it below */ }
+    .btn--green::after {
+      background-color: #55c57a; }
+  .btn::after {
+    content: "";
+    /*mandatory field in ::after*/
+    display: inline-block;
+    /* we want it to be exactly same as our btn display*/
+    /* width and height will be same as the btn (100% of btn is the btn width and height itself */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* this should also be same as btn so it exactly sits behind the btn*/
+    /* till this point, this btn::after looks as the part of btn itself but we want it to be behind this btn so position should be absolute */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* This should not appear in front because it hides the title of btn so we set negetive z-index  */
+    z-index: -1;
+    /* tranition - using it for transform to take effect which is written in hover::after state below */
+    transition: all 0.4s ease-out; }
+  .btn:hover::after {
+    /* we want the element to grow bigger */
+    transform: scaleX(1.4) scaleY(1.6);
+    /* At this point we want the transform to work with ease-out property smoothly in one second, so we give translate property for it's parent in btn and link this transform there */
+    opacity: 0; }
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* fill-mode automatically puts the 0% animation in the beginning before the delay (0.75s). Without this the button appears for 0.75s and then animation happens which deosnt look good */
+    /* Always remember you might want to use fill-mode when using delay for this reason */
+    animation-fill-mode: backwards; }
 
-.btn-text:link,
-.btn-text:visited {
+.btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
   color: #55c57a;
   display: inline-block;
   text-decoration: none;
   border-bottom: 0.1rem solid #55c57a;
   padding: 0.3rem;
-  transition: all 0.2s;
-}
+  transition: all 0.2s; }
 
 .btn-text:hover {
   background-color: #55c57a;
   color: #fff;
   box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.15);
-  transform: translateY(-0.2rem);
-}
+  transform: translateY(-0.2rem); }
 
 .btn-text:active {
   box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  transform: translateY(0rem);
-}
+  transform: translateY(0rem); }
 
 .composition {
-  position: relative;
-}
-.composition__photo {
-  width: 55%;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-  border-radius: 0.2rem;
-  position: absolute;
-  z-index: 10;
-  transition: all 0.2s;
-  outline-offset: 2rem;
-}
-.composition__photo--p1 {
-  left: 0;
-  top: -2rem;
-}
-.composition__photo--p2 {
-  right: 0;
-  top: 2rem;
-}
-.composition__photo--p3 {
-  left: 20%;
-  top: 10rem;
-}
-.composition__photo:hover {
-  transform: scale(1.05) translateY(-0.5rem);
-  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-  z-index: 20;
-  outline: 1.5rem solid #55c57a;
-}
-.composition:hover .composition__photo:not(:hover) {
-  transform: scale(0.95);
-}
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 0.2rem;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20;
+      outline: 1.5rem solid #55c57a; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
@@ -329,141 +278,109 @@ body {
   text-align: center;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  transition: all 0.3s;
-}
-.feature-box__icon {
-  font-size: 6rem;
-  margin-bottom: 0.5rem;
-  background-image: linear-gradient(to bottom, #7ed56f, #28b485);
-  -webkit-background-clip: text;
-  background-clip: 0;
-  color: transparent;
-}
-.feature-box:hover {
-  transform: translateY(-1.5rem) scale(1.03);
-}
+  transition: all 0.3s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    background-image: linear-gradient(to bottom, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    background-clip: 0;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
 
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 52rem;
-}
-.card__side {
-  height: 52rem;
-  transition: all 0.8s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  backface-visibility: hidden;
-  border-radius: 3px;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-}
-.card__side--front {
-  background-color: white;
-}
-.card__side--back {
-  transform: rotateY(180deg);
-}
-.card__side--back-1 {
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-}
-.card__side--back-2 {
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
-}
-.card__side--back-3 {
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
-}
-.card:hover .card__side--front {
-  transform: rotateY(-180deg);
-}
-.card:hover .card__side--back {
-  transform: rotateY(0);
-}
-.card__picture {
-  background-size: cover;
-  height: 23rem;
-  background-blend-mode: screen;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
-}
-.card__picture--1 {
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730),
-    url(../img/nat-5.jpg);
-}
-.card__picture--2 {
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
-    url(../img/nat-6.jpg);
-}
-.card__picture--3 {
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa),
-    url(../img/nat-7.jpg);
-}
-.card__heading {
-  font-size: 2.8rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: #fff;
-  position: absolute;
-  top: 12rem;
-  right: 3rem;
-  text-align: right;
-  width: 75%;
-}
-.card__heading-span {
-  padding: 1rem 1.5rem;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-.card__heading-span-1 {
-  background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
-}
-.card__heading-span-2 {
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
-}
-.card__heading-span-3 {
-  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
-}
-.card__details {
-  padding: 3rem;
-}
-.card__details ul {
-  list-style: none;
-  width: 80%;
-  margin: 0 auto;
-}
-.card__details ul li {
-  text-align: center;
-  font-size: 1.5rem;
-  padding: 1rem;
-}
-.card__details ul li:not(:last-child) {
-  border-bottom: 0.1rem solid #eee;
-}
-.card__cta {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  text-align: center;
-}
-.card__price-box {
-  text-align: center;
-  margin-bottom: 8rem;
-  color: #fff;
-}
-.card__price-only {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-}
-.card__price-value {
-  font-size: 6rem;
-  font-weight: 100;
-}
+  height: 52rem; }
+  .card__side {
+    height: 52rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: white; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem; }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 3rem;
+    text-align: right;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span-1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+    .card__heading-span-2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+    .card__heading-span-3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 0.1rem solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #fff; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .story {
   width: 75%;
@@ -472,56 +389,55 @@ body {
   background-color: #fff;
   border-radius: 0.3rem;
   padding: 6rem;
+  padding-left: 9rem;
   font-size: 1.6rem;
-}
+  transform: skewX(-12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    transform: translateX(-3rem);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%); }
+  .story__img {
+    height: 100%;
+    transform: skewX(12deg); }
+  .story__text {
+    transform: skewX(12deg); }
 
 .row {
   max-width: 114rem;
-  margin: 0 auto;
-}
-.row:not(:last-child) {
-  margin-bottom: 8rem;
-}
-.row [class^="col-"] {
-  float: left;
-}
-.row [class^="col-"]:not(:last-child) {
-  margin-right: 6rem;
-}
-.row .col-1-of-2 {
-  width: calc((100% - 6rem) / 2);
-}
-.row .col-1-of-3 {
-  width: calc((100% - 2 * 6rem) / 3);
-}
-.row .col-1-of-4 {
-  width: calc((100% - 3 * 6rem) / 4);
-}
-.row .col-2-of-3 {
-  width: calc((2 * (100% - 2 * 6rem) / 3) + 6rem);
-}
-.row .col-2-of-4 {
-  width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
-}
-.row .col-3-of-4 {
-  width: calc((3 * ((100% - 3 * 6rem) / 4)) + 2 * 6rem);
-}
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 *6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 *6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc( (2 * (100% - 2 *6rem) / 3) + 6rem); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 *6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( (3 * ((100% - 3 *6rem) / 4)) + 2 *6rem); }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .header {
   height: 95vh;
   /* we have a bg image. We need to set green color on top of it, so we specify a gradiant. Gradiant will come first coz it should stay on top of bg image */
   /* linear gradiant is having multiple colors and to right indicate from left (dark green to right light green). We can also give to top OR to bottom OR to right bottom and so on */
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   /* fits completely*/
   background-position: top;
@@ -540,62 +456,48 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* setting this element to relative because this is parent element to logo-box and text-box which are the child and absolutely positioned */
   position: relative;
-  /* Text-box */
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
-  /* The same applies of width. If we set width, then height will be set automatically by browser */
-  height: 3.5rem;
-}
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* The text-box's center needs to be top-40 and left-50 and not the text-box's start. This can be done by adding transform translate */
-  /* translate moves the text-box itself as defined inside translate */
-  transform: translate(-50%, -50%);
-  /* X = -50% and Y=-50%, so that it's center will be aligned properly  */
-  /* this is used so that the .btn (anchor tag) which is inline element centers itself in this block */
-  text-align: center;
-  /* margin:auto vs text-align: center;; */
-  /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */
-}
+  /* Text-box */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    /* If we specify height then the widht will automatically set by browser and we dont need to set that. If we set width then our width will take the priority and appears on the page */
+    /* The same applies of width. If we set width, then height will be set automatically by browser */
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* The text-box's center needs to be top-40 and left-50 and not the text-box's start. This can be done by adding transform translate */
+    /* translate moves the text-box itself as defined inside translate */
+    transform: translate(-50%, -50%);
+    /* X = -50% and Y=-50%, so that it's center will be aligned properly  */
+    /* this is used so that the .btn (anchor tag) which is inline element centers itself in this block */
+    text-align: center;
+    /* margin:auto vs text-align: center;; */
+    /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */ }
 
 /* Logo */
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
-  margin-top: -20vh;
-}
+  margin-top: -20vh; }
 
 .section-features {
   padding: 20rem 0;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(126, 213, 111, 0.8),
-      rgba(40, 180, 133, 0.8)
-    ),
-    url(../img/nat-4.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
   transform: skewY(-7deg);
-  margin-top: -10rem;
-}
-.section-features > * {
-  transform: skewY(7deg);
-}
+  margin-top: -10rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
 
 .section-tours {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
-  margin-top: -10rem;
-}
+  margin-top: -10rem; }
 
 .section-stories {
   padding: 15rem 0;
-  background-color: #f7f7f7;
-}
+  background-color: #f7f7f7; }
