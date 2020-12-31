@@ -45,6 +45,7 @@
   }
   &__img {
     height: 100%;
+    transform: translateX(-4rem); // to center the image inside the shape
   }
   &__text {
     // explained above why skew is necessary on both text and image
@@ -57,9 +58,17 @@
     color: $color-white;
     transform: translate(
       -50%,
-      -50%
+      0
     ); // this is for adjusting center of the text to center of container which is shape (this u have seen in header text)
     font-size: 1.7rem;
     text-align: center;
+    // opacity is set to 0 and translated from -50%,0 because the caption should be invisible unless hovered
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden; // to avoid shakyness of animation
+  }
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 }
