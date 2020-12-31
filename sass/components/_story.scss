@@ -6,4 +6,20 @@
   border-radius: 0.3rem;
   padding: 6rem;
   font-size: $default-font-size;
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    background-color: orangered;
+    // shape-outside property is basicaly used to create shapes for text. In story we want the semi circle look of the text so we use this;
+    // for this to work three conditions must be present on this element. width, height and float.
+    // currently only supported in chrome and safari. need to include -webkit-shape-outside
+    // not only circle but we can also use polygon and others just like clip-path
+    // in circle we can define size, position and center of the circle like below
+
+    // first param 50% tells the radius of the circle. Radius in this case is 50% of width and height of element. 7.5rem in this case which means diameter is equal to shape size
+    // last two params 50% 50% says the center of the circle, 50% horizontally and 50% verticallty
+    -webkit-shape-outside: circle(50% at 50% 50%); // for safari
+    shape-outside: circle(50% at 50% 50%);
+  }
 }
