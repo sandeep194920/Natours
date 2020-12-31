@@ -2,7 +2,7 @@
   width: 75%;
   margin: 0 auto; // block inside a block so we can use margin to center it
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
-  background-color: $color-white;
+  background-color: rgba($color-white, 0.6);
   border-radius: 0.3rem;
   padding: 6rem;
   padding-left: 9rem; // this extra padding-left is added because we have moved(translated) to left, -3rem
