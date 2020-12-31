@@ -21,7 +21,9 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    transform: translateX(-3rem);
+    // explained above why skew is necessary on both text and image
+
+    transform: translateX(-3rem) skewX(12deg);
 
     // shape-outside property is basicaly used to create shapes for text. In story we want the semi circle look of the text so we use this;
     // for this to work three conditions must be present on this element. width, height and float.
@@ -37,14 +39,27 @@
     // we also need the shape to be circle, so we clip the shape
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
+
+    // we need the figcaption to be absolutely positioned, so setting this to position relative
+    position: relative;
   }
   &__img {
     height: 100%;
-    // explained above why skew is necessary on both text and image
-    transform: skewX(12deg);
   }
   &__text {
     // explained above why skew is necessary on both text and image
     transform: skewX(12deg);
+  }
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $color-white;
+    transform: translate(
+      -50%,
+      -50%
+    ); // this is for adjusting center of the text to center of container which is shape (this u have seen in header text)
+    font-size: 1.7rem;
+    text-align: center;
   }
 }
