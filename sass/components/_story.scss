@@ -21,5 +21,9 @@
     // last two params 50% 50% says the center of the circle, 50% horizontally and 50% verticallty
     -webkit-shape-outside: circle(50% at 50% 50%); // for safari
     shape-outside: circle(50% at 50% 50%);
+
+    // the shape is currently rectangle, let's make it circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
   }
 }
