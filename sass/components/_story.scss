@@ -45,7 +45,11 @@
   }
   &__img {
     height: 100%;
-    transform: translateX(-4rem); // to center the image inside the shape
+    // scale is added so that initially the image is bit zoomed in and it zooms out when hovered
+    transform: translateX(-4rem) scale(1.4); // to center the image inside the shape. In case if any translation doesnt work, then add backface-visibility hidden
+    // backface-visibility is added so that the transform above doesnt misbehave
+    backface-visibility: hidden;
+    transition: all 0.5s;
   }
   &__text {
     // explained above why skew is necessary on both text and image
@@ -70,5 +74,12 @@
   &:hover &__caption {
     opacity: 1;
     transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    // filter is a prop used to alter image blur, brigtness and so many other things.
+    // brightness above 100% is for making images brighter and less than 100% to make img darker
+    filter: blur(0.3rem) brightness(80%);
   }
 }
