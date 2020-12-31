@@ -11,7 +11,6 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    background-color: orangered;
     // shape-outside property is basicaly used to create shapes for text. In story we want the semi circle look of the text so we use this;
     // for this to work three conditions must be present on this element. width, height and float.
     // currently only supported in chrome and safari. need to include -webkit-shape-outside
@@ -29,5 +28,10 @@
 
     // we need some margin right to the shape, but since it's floated, let's not mess with margins but simply translate this shape to move a bit
     transform: translateX(-3rem);
+  }
+
+  //  image inside the circle
+  &__img {
+    height: 100%;
   }
 }
