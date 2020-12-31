@@ -5,19 +5,12 @@
   background-color: $color-white;
   border-radius: 0.3rem;
   padding: 6rem;
-  padding-left: 9rem; // this is added because we moved the shape -3rem so to compensate for that
   font-size: $default-font-size;
-  transform: skewX(-12deg);
-  // this would skey shape and text which are the direct children of story.
-  //   this would work only on text but not on the shape becuase shape has one transform applied to it already.
-  //   Currently, css supports only one transform prop so there is no way adding two. We hence separately on direct children apply the transform to 12 deg for it to get back to normal position
-  //   & > * {
-  //     transform: skewX(12deg);
-  //   }
   &__shape {
     width: 15rem;
     height: 15rem;
     float: left;
+    background-color: orangered;
     // shape-outside property is basicaly used to create shapes for text. In story we want the semi circle look of the text so we use this;
     // for this to work three conditions must be present on this element. width, height and float.
     // currently only supported in chrome and safari. need to include -webkit-shape-outside
@@ -28,22 +21,5 @@
     // last two params 50% 50% says the center of the circle, 50% horizontally and 50% verticallty
     -webkit-shape-outside: circle(50% at 50% 50%); // for safari
     shape-outside: circle(50% at 50% 50%);
-
-    // the shape is currently rectangle, let's make it circle
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-
-    // we need some margin right to the shape, but since it's floated, let's not mess with margins but simply translate this shape to move a bit
-    // look at the explanation for skew in story above
-    transform: translateX(-3rem) skewX(12deg);
-  }
-
-  //  image inside the circle
-  &__img {
-    height: 100%;
-  }
-  &__text {
-    // look at the explanation for skew in story above
-    transform: skewX(12deg);
   }
 }
