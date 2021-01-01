@@ -34,5 +34,24 @@
   }
 
   &__label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+    transform: translateY(0);
+  }
+  // the meaning of &__input:placeholder-shown &__label   is form__input:placeholder-shown form__label.
+  // form__input and form__label are siblings and not the children so we need a sibling selector as shown
+  // + is the adjacent sibling selector. It selects the immediate (very next) sibling. form_input's very next element is form_label, so + works in this case
+  //   If there were other elements (other siblings) in between form__input and form__label then instead of + we can use ~
+  &__input:placeholder-shown + &__label {
+    // initial state (when nothing is written in input and placeholder is visible)
+    //  this means that-> when placeholder is shown (when we have not yet written anything in input), label must be translated below
+    opacity: 0;
+    visibility: hidden; // required opacity 0 as well with visibility:hidden to animate this
+    // it has to be at the top in initial state
+    transform: translateY(-2rem);
   }
 }
