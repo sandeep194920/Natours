@@ -11,16 +11,23 @@
     // inside the input elements we don't have lato font by default
     // all elements inherit font-family by default but input elements don't so we need to specify manually
     font-family: inherit;
+    color: inherit;
     border-bottom: 0.3rem solid transparent; // initially will be invisible and when clicked, it will show green color (focus)
     width: 90%;
     display: block;
+
+    // when we click on input the border becomes blue, we can remove that by focus attribute
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 0.3rem solid $color-primary;
+    }
+    // to design placeholder (pseudo element). webkit is necessary and it currently works only on safari and chrome
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
   }
-  // when we click on input the border becomes blue, we can remove that by focus attribute
-  &__input:focus {
-    outline: none;
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-    border-bottom: 0.3rem solid $color-primary;
-  }
+
   &__label {
   }
 }
