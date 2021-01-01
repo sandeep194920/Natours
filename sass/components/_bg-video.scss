@@ -6,4 +6,16 @@
   width: 100%;
   z-index: -1; // for it to appear behind everything
   opacity: 0.2;
+
+  // to avoid overflow
+  overflow: hidden;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+
+    // similar to background-size: cover. This fits it's parent's width and height while maintaining the aspect ratio. The part of the video that don't fit the parent will simply be clipped off;
+    // note that it also woks with other html elements like img
+    object-fit: cover;
+  }
 }
