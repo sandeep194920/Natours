@@ -389,6 +389,33 @@
                   <!-- click the label and see so that the input will be focused (when both are connected using id and for ofcourse) -->
                   <label for="email" class="form__label">Email Address</label>
                 </div>
+                <!-- radio btns -->
+                <!-- name must be specified so that html knows they both belong to the same group and hence when one is selected the other one gets deselected -->
+                <div class="form__group">
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      class="form-radio-input"
+                      id="small"
+                      name="size"
+                    />
+                    <label for="small" class="form__radio-label"
+                      >Small tour group</label
+                    >
+                  </div>
+
+                  <div class="form__radio-group">
+                    <input
+                      type="radio"
+                      class="form-radio-input"
+                      id="large"
+                      name="size"
+                    />
+                    <label for="large" class="form__radio-label"
+                      >Large tour group</label
+                    >
+                  </div>
+                </div>
               </form>
             </div>
           </div>
