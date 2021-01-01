@@ -26,6 +26,11 @@
     &::-webkit-input-placeholder {
       color: $color-grey-dark-2;
     }
+
+    // validation comes in the browsers. In html, we mark required so that takes care of the check. We can design that using following. We want this to happen when the field is actually focused
+    &:focus:invalid {
+      border-bottom: 0.3rem solid $color-secondary-dark;
+    }
   }
 
   &__label {

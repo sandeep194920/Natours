@@ -326,6 +326,8 @@ body {
     border-bottom: 0.3rem solid #55c57a; }
   .form__input::-webkit-input-placeholder {
     color: #999; }
+  .form__input:focus:invalid {
+    border-bottom: 0.3rem solid #ff7730; }
 
 .card {
   perspective: 150rem;
