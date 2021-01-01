@@ -50,3 +50,31 @@
   // for bg-video which is absolutely positioned
   position: relative;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.book {
+  // now, to get the white color background on the form on the image,one way we could do is to add another layer of div and clip it and then filter it.
+  // Let's now explore the other way of doing it through gradient. Let's add a gradient to the bg image separated by ,
+
+  // we are saying, we want gradient to be 105 deg (which creates the line)
+  // at 0%, we want white, at 50% we want white and at 50% we also want transparent color which continues further
+  background-image: linear-gradient(
+      105deg,
+      rgba(white, 0.9) 50%,
+      transparent 50%
+    ),
+    url("../img/nat-10.jpg");
+
+  background-size: cover; // this can also be %. 100% is equal to or same as cover
+  height: 50rem; // for testing only, will remove it later
+  border-radius: 0.3rem;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+}
