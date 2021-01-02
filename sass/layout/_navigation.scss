@@ -13,6 +13,7 @@
     right: 6rem;
     // this one should sit on top of the nav bg so it should have a zindex more than bg
     z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
   }
   &__background {
     //  Because it should be a circle, we give  same height and width and 50% border-radius
@@ -28,20 +29,36 @@
       $color-primary-dark
     ); // in this case, light color will be starting at the center and spreads all the way out across the cirumference of the circle
     z-index: 1000; // this only works on an element whose position is defined. We need a larger number as it should cover all behind it
-    transform: scale(
-      150
-    ); // this enlarges the background . This is for testing for now.
+    // transform: scale(
+    //   150
+    // ); // this enlarges the background . This is for testing for now.
+
+    //we want the background to scale smoothly when btn clicked so adding transition only on transform. Just not doing all this time
+    // timing functions can be generated using below links
+    // https://easings.net/#easeInOutCubic
+    // https://cubic-bezier.com/#.17,.67,.83,.67
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   //navigation__nav is the huge element that occupies the screen when the navigation__button is clicked
   &__nav {
     height: 100vh;
-    width: 100%; // no need to specify width because it's a block level element and occupies the entire width by default
+    //width: 100%; // no need to specify width because it's a block level element and occupies the entire width by default
     position: fixed; // stays at same place on scroll
     top: 0;
-    right: 0;
+    left: 0;
     // navigation page should stay on top of nav_background but under navigation_button, so giving a z-index in between both
     z-index: 1500;
+
+    // initially this should be hidden, so setting width to 0 and opacty to 0
+    opacity: 0;
+    width: 0;
+    // we want the navigation to appear smoothly when btn clicked so adding transition
+
+    // timing functions can be generated using below links
+    // https://easings.net/#easeInOutCubic
+    // https://cubic-bezier.com/#.17,.67,.83,.67
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
   &__list {
     position: absolute;
@@ -93,5 +110,14 @@
       //   to slightly move a bit right when hovered so that it looks good.
       transform: translateX(1rem);
     }
+  }
+  // when checkbox is checked, we need the navigation to be visible.
+  // on navigation__checkbox-> checked, navigation__background and navigation__nav should be visible
+  &__checkbox:checked ~ &__background {
+    transform: scale(100);
+  }
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
   }
 }
