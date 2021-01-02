@@ -30,7 +30,16 @@
     z-index: 1000; // this only works on an element whose position is defined. We need a larger number as it should cover all behind it
   }
 
+  //navigation__nav is the huge element that occupies the screen when the navigation__button is clicked
   &__nav {
+    height: 100vh;
+    width: 100%; // no need to specify width because it's a block level element and occupies the entire width by default
+    position: fixed; // stays at same place on scroll
+    top: 0;
+    right: 0;
+    // navigation page should stay on top of nav_background but under navigation_button, so giving a z-index in between both
+    z-index: 1500;
+    background-color: orange; // for testing purpose. Take a look by pulling this commit and you'll see how it looks
   }
   &__list {
   }
