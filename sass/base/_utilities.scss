@@ -1,23 +1,25 @@
 // utility class that helps to center the text
+// utility classes can have important field because this is the one should take precedence becuase we explicitly specify this to happen
+// If we don't specify, sometimes the cascades make conflicts and our utility styles may not apply
 .u-center-text {
   // the text is inline block element so we use text-align and not margin : auto
-  text-align: center;
+  text-align: center !important;
 }
 
 // used in about section for heading-secondary
 .u-margin-bottom-big {
-  margin-bottom: 8rem;
+  margin-bottom: 8rem !important;
 }
 .u-margin-bottom-medium {
-  margin-bottom: 4rem;
+  margin-bottom: 4rem !important;
 }
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 .u-margin-top-huge {
-  margin-top: 10rem;
+  margin-top: 10rem !important;
 }
 .u-margin-top-big {
-  margin-top: 8rem;
+  margin-top: 8rem !important;
 }

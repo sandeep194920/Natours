@@ -133,22 +133,22 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 .u-margin-top-big {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 /* button */
 .btn {
@@ -164,7 +164,7 @@ body {
   /* Note, we need this after content to be exactly like our btn and sits behind it. We scale it to be bigger than btn in animation */
   /* when we hover the btn, we need the ::after content to take effect */
   /* Since we will have many btns later we will need this animation only to this btn now */ }
-  .btn:link, .btn:visited {
+  .btn, .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -179,12 +179,15 @@ body {
     /* we define transition here and related transofrm will be specified as below in hover and active states */
     transition: all 0.2s;
     /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
-    position: relative; }
+    position: relative;
+    border: none;
+    cursor: pointer; }
   .btn:hover {
     transform: translateY(-0.3rem);
     /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .btn--white {

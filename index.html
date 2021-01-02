@@ -391,7 +391,7 @@
                 </div>
                 <!-- radio btns -->
                 <!-- name must be specified so that html knows they both belong to the same group and hence when one is selected the other one gets deselected -->
-                <div class="form__group">
+                <div class="form__group u-margin-bottom-medium">
                   <div class="form__radio-group">
                     <!-- in css, there is no way of designing radio buttons, so we actually design the label and add buttons there -->
                     <input
@@ -420,6 +420,14 @@
                       group</label
                     >
                   </div>
+                </div>
+
+                <div class="form__radio-group">
+                  <!-- Note that we need a real button inside the form and not the anchor link as we used before -->
+                  <!-- we need button coz that will allow to submit the form -->
+                  <!-- button will be to submit by default -->
+                  <!-- To use the a element styles, we need to make some changes in styles of btn -->
+                  <button class="btn btn--green">Next Step &rarr;</button>
                 </div>
               </form>
             </div>

@@ -10,6 +10,7 @@
   /* active - currently clicked link state */
 
   /* using pseudo selectors we can define these states as shown */
+  &, // this is for <button> element, because link, visited are only in anchor tag and not the button itself
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -28,14 +29,20 @@
 
     /* position is set to relative because  btn::after is set to absolute for btn::after to appear behind the btn*/
     position: relative;
+
+    // changes for <button> element
+    border: none;
+    cursor: pointer;
   }
   &:hover {
     transform: translateY(-0.3rem);
     /* box-shadow: x-direction y-direction amount-of-blurness color-&-opacity ; */
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
   }
-
-  &:active {
+  // focus is for <button> element and not for anchor tag
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-1px);
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
   }
