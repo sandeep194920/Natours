@@ -524,6 +524,9 @@ body {
     transform: translateX(-4rem) scale(1);
     filter: blur(0.3rem) brightness(80%); }
 
+.footer {
+  background-color: #333; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
