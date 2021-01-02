@@ -393,15 +393,18 @@
                 <!-- name must be specified so that html knows they both belong to the same group and hence when one is selected the other one gets deselected -->
                 <div class="form__group">
                   <div class="form__radio-group">
+                    <!-- in css, there is no way of designing radio buttons, so we actually design the label and add buttons there -->
                     <input
                       type="radio"
                       class="form-radio-input"
                       id="small"
                       name="size"
                     />
-                    <label for="small" class="form__radio-label"
-                      >Small tour group</label
-                    >
+                    <label for="small" class="form__radio-label">
+                      <!-- this is only for styling and no content required -->
+                      <span class="form__radio-button"></span>
+                      Small tour group
+                    </label>
                   </div>
 
                   <div class="form__radio-group">
@@ -411,8 +414,10 @@
                       id="large"
                       name="size"
                     />
-                    <label for="large" class="form__radio-label"
-                      >Large tour group</label
+                    <label for="large" class="form__radio-label">
+                      <!-- this is only for styling and no content required -->
+                      <span class="form__radio-button"></span>Large tour
+                      group</label
                     >
                   </div>
                 </div>

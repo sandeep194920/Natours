@@ -55,4 +55,14 @@
     // it has to be at the top in initial state
     transform: translateY(-2rem);
   }
+
+  &__radio-group {
+    // we could have used floats also to make labels side by side instead of giving a width and display inline-block. But this is also a good approach
+    width: 49%;
+    display: inline-block;
+  }
+  &__radio-label {
+    font-size: $default-font-size;
+    cursor: pointer;
+  }
 }
