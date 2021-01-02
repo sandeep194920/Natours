@@ -55,10 +55,38 @@
     margin: 1rem;
   }
   &__link {
-    font-size: 3rem;
-    font-weight: 300;
-    color: $color-white;
-    text-decoration: none;
-    text-transform: uppercase;
+    &:link,
+    &:visited {
+      // padding and other things apply only if its inline-block
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      // less padding on top and bit more on sides always looks good
+      padding: 1rem 2rem;
+      // on hover we need to get the solid gradient background white
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white 50%
+      );
+      // well, all the trick happens here with background-size. Increase and decrease this in the browser and you'll get to know how it changes
+      //   If we decrease to 50%, then u see background shrinks and repeats itself twice where as if u increase beyond 100%, it will enlarge and the white part will disappear slowly
+      // note that if it's negative nothing happens, it doesnt work. Negative can be considered as 100% only
+      // Now, on hover, we need to move the white bg part to left side. But as I said we cant use negative number on bg-size to move left. Instead, on hover, we can use background-position. By setting it to near 100%, the white part will move from right most to cover the button
+      background-size: 240%;
+      transition: all 0.4s;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary;
+      //   to slightly move a bit right when hovered so that it looks good.
+      transform: translateX(1rem);
+    }
   }
 }
