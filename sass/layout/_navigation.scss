@@ -2,6 +2,16 @@
   &__checkbox {
   }
   &__button {
+    background-color: $color-white;
+    // we are making this a circle as well like background below, and this will be slightly bigger than the bg. We dopnt want to see the green color navigation behind this white color button
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    // this one should sit on top of the nav bg so it should have a zindex more than bg
+    z-index: 2000;
   }
   &__background {
     //  Because it should be a circle, we give  same height and width and 50% border-radius

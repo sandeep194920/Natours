@@ -634,6 +634,16 @@ body {
     /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */ }
 
 /* Logo */
+.navigation__button {
+  background-color: #fff;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  z-index: 2000; }
+
 .navigation__background {
   height: 6rem;
   width: 6rem;
