@@ -634,6 +634,9 @@ body {
     /* margin is used on container to center it while text-align is used on inline and inline-block elemnts to align them */ }
 
 /* Logo */
+.navigation__checkbox {
+  display: none; }
+
 .navigation__button {
   background-color: #fff;
   height: 7rem;
