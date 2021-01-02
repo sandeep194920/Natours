@@ -28,6 +28,9 @@
       $color-primary-dark
     ); // in this case, light color will be starting at the center and spreads all the way out across the cirumference of the circle
     z-index: 1000; // this only works on an element whose position is defined. We need a larger number as it should cover all behind it
+    transform: scale(
+      150
+    ); // this enlarges the background . This is for testing for now.
   }
 
   //navigation__nav is the huge element that occupies the screen when the navigation__button is clicked
@@ -39,9 +42,14 @@
     right: 0;
     // navigation page should stay on top of nav_background but under navigation_button, so giving a z-index in between both
     z-index: 1500;
-    background-color: orange; // for testing purpose. Take a look by pulling this commit and you'll see how it looks
   }
   &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
   }
   &__item {
   }
