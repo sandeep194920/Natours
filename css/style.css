@@ -350,7 +350,19 @@ body {
 
 .form__radio-label {
   font-size: 1.6rem;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 0.5rem solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0rem;
+  top: -0.6rem; }
 
 .card {
   perspective: 150rem;

@@ -64,5 +64,27 @@
   &__radio-label {
     font-size: $default-font-size;
     cursor: pointer;
+    position: relative; // radio-btn (span is absolutely positioned for correct placement, so making this relative
+    // giving some padding so text will move to right
+    padding-left: 4.5rem;
+  }
+  // our defined radio-buttons (span tags which will be turned into custom radio btns)
+  &__radio-button {
+    // since it is a circle we give same height and width
+    height: 3rem;
+    width: 3rem;
+    border: 0.5rem solid $color-primary;
+    border-radius: 50%;
+    // changing the default display of span from inline to inline-block element.
+    // By default, span is an inline element so it doesnt work as the all of the above props wont apply to inline, so we make it either a block or inline-block. inline-block in this case
+    display: inline-block;
+
+    // lets position it properly
+    position: absolute;
+    left: 0rem;
+    top: -0.6rem;
+    // the green dot (selector) inside the custom radio btn can be designed using ::after pseudo class
+    &::after {
+    }
   }
 }
