@@ -11,10 +11,12 @@
     position: fixed; // similar to absolute but this doesnt change the position as we scroll and thats the only difference. Like absolute, it also takes the element out of the flow
     top: 6.5rem;
     right: 6.5rem;
+    // linear gradient goes from one place and ends in other in one direction, where as radial-gradient starts at center and spreads in all directions
     background-image: radial-gradient(
       $color-primary-light,
       $color-primary-dark
-    ); // linear gradient goes from one place and ends in other in one direction, where as radial-gradient starts at center and spreads in all directions
+    ); // in this case, light color will be starting at the center and spreads all the way out across the cirumference of the circle
+    z-index: 1000; // this only works on an element whose position is defined. We need a larger number as it should cover all behind it
   }
 
   &__nav {
