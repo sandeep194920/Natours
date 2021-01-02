@@ -4,6 +4,17 @@
   &__button {
   }
   &__background {
+    //  Because it should be a circle, we give  same height and width and 50% border-radius
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed; // similar to absolute but this doesnt change the position as we scroll and thats the only difference. Like absolute, it also takes the element out of the flow
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    ); // linear gradient goes from one place and ends in other in one direction, where as radial-gradient starts at center and spreads in all directions
   }
 
   &__nav {
