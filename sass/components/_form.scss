@@ -115,4 +115,8 @@
   &__radio-input:checked + &__radio-label &__radio-button::after {
     opacity: 1;
   }
+  // finally hiding the real radio button which is radio-input
+  &__radio-input {
+    display: none;
+  }
 }
