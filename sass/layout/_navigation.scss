@@ -79,6 +79,11 @@
       // Now, on hover, we need to move the white bg part to left side. But as I said we cant use negative number on bg-size to move left. Instead, on hover, we can use background-position. By setting it to near 100%, the white part will move from right most to cover the button
       background-size: 240%;
       transition: all 0.4s;
+      //   giving space rightside to the span elements (numbers)
+      span {
+        margin-right: 2rem;
+        display: inline-block;
+      }
     }
 
     &:hover,
