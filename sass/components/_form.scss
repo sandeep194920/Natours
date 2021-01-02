@@ -68,7 +68,7 @@
     // giving some padding so text will move to right
     padding-left: 4.5rem;
   }
-  // our defined radio-buttons (span tags which will be turned into custom radio btns)
+  // our defined radio-buttons (span tags which will be turned into custom radio btns) . // NOTE : Using the same logic we can design custom check boxes
   &__radio-button {
     // since it is a circle we give same height and width
     height: 3rem;
@@ -96,6 +96,23 @@
       left: 50%;
       transform: translate(-50%, -50%);
       background-color: $color-primary;
+      // setting opacity to 0 so that initially before checked (before selected) it should be invisible
+      opacity: 0;
+      // to give a smooth transition
+      transition: opacity 0.2s;
     }
+  }
+
+  // how do we know which radio btn is clicked so that we can put the opacity of the radio-btn::after back to 1 (selected radio btn)
+  // well, there is a pseudo element called checked on the radio button (actual radio button of html - form-radio-input in our case, and we can use that)
+
+  // we are saying, if form__radio-input is selected, then form__radio-btn opacity should be 1
+  // form__radio-btn is not the direct child of form__radio-input.  form-radio-label is the sibling of form-radio-input and form-radio-input's child is what we need to select
+
+  // Note this can also be written as (~ instead of +)       &__radio-input:checked ~ &__radio-label &__radio-button::after
+  // we are selecting sibling's child here that's it
+
+  &__radio-input:checked + &__radio-label &__radio-button::after {
+    opacity: 1;
   }
 }
