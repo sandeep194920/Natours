@@ -18,6 +18,26 @@
   <body>
     <!-- Let's name all the element classes as per BEM methodology -->
     <!-- class header can be reused anywhere so we can consider it as block level in BEM -->
+
+    <!-- navigation -->
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+      <!-- MENU text here will be replaced by navigation icon later -->
+      <label for="navi-toggle" class="navigation__button"> MENU</label>
+      <div class="navigation__background">&nbsp;</div>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">About Natours</a>
+            <a href="#" class="navigation__link">Benefits</a>
+            <a href="#" class="navigation__link">Popular tours</a>
+            <a href="#" class="navigation__link">Stories</a>
+            <a href="#" class="navigation__link">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
     <header class="header">
       <div class="header__logo-box">
         <!-- give meaningful names to alt because that not only appears if img is not present, 
