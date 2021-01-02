@@ -78,13 +78,24 @@
     // changing the default display of span from inline to inline-block element.
     // By default, span is an inline element so it doesnt work as the all of the above props wont apply to inline, so we make it either a block or inline-block. inline-block in this case
     display: inline-block;
-
     // lets position it properly
     position: absolute;
     left: 0rem;
-    top: -0.6rem;
+    top: -0.5rem;
     // the green dot (selector) inside the custom radio btn can be designed using ::after pseudo class
     &::after {
+      content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      // we want a circle, so border radius
+      border-radius: 50%;
+      position: absolute;
+      // top, left, transform positions it to the center
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-primary;
     }
   }
 }
