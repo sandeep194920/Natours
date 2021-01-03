@@ -68,6 +68,7 @@ body {
   text-transform: uppercase;
   /* to make the animation work without shaking. Why this works is not clearly known at this point of time */
   /* make sure you use this when you use animations */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   /* margin for button btn */
   margin-bottom: 6rem;
@@ -399,6 +400,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
@@ -571,6 +573,7 @@ body {
   .story__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: all 0.5s; }
   .story__text {
@@ -585,6 +588,7 @@ body {
     text-align: center;
     opacity: 0;
     transition: all 0.5s;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
   .story:hover .story__caption {
     opacity: 1;

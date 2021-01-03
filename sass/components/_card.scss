@@ -22,6 +22,8 @@
     width: 100%;
 
     // we need back-face-visibility hidden so that it hides the back part when rotated.
+
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 
     border-radius: 3px;

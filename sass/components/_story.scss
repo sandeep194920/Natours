@@ -48,6 +48,7 @@
     // scale is added so that initially the image is bit zoomed in and it zooms out when hovered
     transform: translateX(-4rem) scale(1.4); // to center the image inside the shape. In case if any translation doesnt work, then add backface-visibility hidden
     // backface-visibility is added so that the transform above doesnt misbehave
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: all 0.5s;
   }
@@ -69,6 +70,7 @@
     // opacity is set to 0 and translated from -50%,0 because the caption should be invisible unless hovered
     opacity: 0;
     transition: all 0.5s;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; // to avoid shakyness of animation
   }
   &:hover &__caption {

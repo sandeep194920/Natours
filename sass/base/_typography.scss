@@ -6,6 +6,7 @@
   text-transform: uppercase;
   /* to make the animation work without shaking. Why this works is not clearly known at this point of time */
   /* make sure you use this when you use animations */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 
   /* margin for button btn */
