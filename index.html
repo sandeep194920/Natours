@@ -202,7 +202,8 @@
       </section>
 
       <!-- tours section -->
-      <section class="section-tours">
+      <!-- adding id here for the anchor to work on closing the popup -->
+      <section id="section-tours" class="section-tours">
         <!-- the div u-center-text is just a reusable utility class helps to center the text. Because this div is a block element so we can use margin auto on heading secondary -->
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">Most popular tours</h2>
@@ -524,6 +525,8 @@
           <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
         </div>
         <div class="popup__right">
+          <!-- &times; is an X here -->
+          <a href="#section-tours" class="popup__close">&times;</a>
           <h2 class="heading-secondary u-margin-bottom-small">
             Start Booking now
           </h2>

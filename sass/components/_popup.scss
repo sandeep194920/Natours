@@ -14,9 +14,30 @@
   transition: all 0.4s;
 
   // initially this opoup will be hidden. When you click on the Book Now, we have given href=#opoup and specified id="popup" in popup div. This becomes the target and can be set opacity and visibility back to defaults
+  // when the target changes, the below styles no longer apply and hence the popup will set back to the above styles (opacity: 0 and visibitly :hidden)
+
   &:target {
     opacity: 1;
     visibility: visible;
+  }
+
+  // when popup is closed
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute; // will be positioned relatively to the popup-content
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+    &:hover {
+      color: $color-primary;
+    }
   }
 
   &__content {
