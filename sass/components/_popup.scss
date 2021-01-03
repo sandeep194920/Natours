@@ -6,6 +6,9 @@
   top: 0;
   left: 0;
   z-index: 9999;
+  // if u set display none, then u cant animate it. Instead do opacity 0 and visibility hidden
+  opacity: 0;
+  visibility: hidden;
 
   &__content {
     background-color: $color-white;
