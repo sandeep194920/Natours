@@ -497,15 +497,15 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 3px;
-    display: table; }
+    display: table;
+    overflow: hidden; }
   .popup__left {
     width: 33.33333%;
-    display: table-cell;
-    background-color: orange; }
+    display: table-cell; }
   .popup__right {
     width: 66.666667%;
     display: table-cell;
-    background-color: red; }
+    vertical-align: middle; }
   .popup__img {
     display: block;
     width: 100%; }
