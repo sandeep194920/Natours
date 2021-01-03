@@ -47,11 +47,22 @@
   &__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
-    // to divide the text into columns, we give column-count;
-    column-count: 2;
+
+    // to work on all the browsers, we need prefixes like this
+    -moz-column-count: 2;
     // default column-gap will be 1em which is 1.4rem = 14px in this case. default is 1em / 1.4 rem in this case because we have defined the font-size for .text here to be 1.4rem and that is considered as 1em.
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid $color-grey-light-2; //color and thickness of gap between two columns
+
+    column-count: 2;
     column-gap: 4rem;
-    column-rule: 1px solid $color-grey-light-2; //color and thickness of gap between two columns
-    hyphens: auto; // when half of a word goes to next line then this helps. Example San-deep, deep being in next line
+    column-rule: 1px solid $color-grey-light-2;
+
+    // when half of a word goes to next line then this helps. Example San-deep, deep being in next line
+    // to work on all the browsers, we need prefixes like this
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
   }
 }
