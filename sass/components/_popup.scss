@@ -13,33 +13,6 @@
   // animation is not possible if we have used display none. So we are using opacity and visibility as I told
   transition: all 0.4s;
 
-  // initially this opoup will be hidden. When you click on the Book Now, we have given href=#opoup and specified id="popup" in popup div. This becomes the target and can be set opacity and visibility back to defaults
-  // when the target changes, the below styles no longer apply and hence the popup will set back to the above styles (opacity: 0 and visibitly :hidden)
-
-  &:target {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  // when popup is closed
-  &__close {
-    &:link,
-    &:visited {
-      color: $color-grey-dark;
-      position: absolute; // will be positioned relatively to the popup-content
-      top: 2.5rem;
-      right: 2.5rem;
-      font-size: 3rem;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.2s;
-      line-height: 1;
-    }
-    &:hover {
-      color: $color-primary;
-    }
-  }
-
   &__content {
     background-color: $color-white;
     width: 75%;
@@ -55,6 +28,12 @@
     display: table;
     // to avoid image overlapping the border (inorder to properly see the border-radius)
     overflow: hidden;
+
+    // for animation purpose, content should be scaled down and invisible initially
+    opacity: 0;
+    // transform: scale(0); // this wont work because we have already defined a transform in the mixin, so lets put it here
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.5s 0.2s;
   }
 
   &__left {
@@ -97,5 +76,39 @@
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+  }
+
+  // popup open state
+
+  // initially this popup will be hidden. When you click on the Book Now, we have given href=#opoup and specified id="popup" in popup div. This becomes the target and can be set opacity and visibility back to defaults
+  // when the target changes, the below styles no longer apply and hence the popup will set back to the above styles (opacity: 0 and visibitly :hidden)
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+  // when popup becomes the target the content should open with animation
+  &:target &__content {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+
+  // when popup is closed
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute; // will be positioned relatively to the popup-content
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
