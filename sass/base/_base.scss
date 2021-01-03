@@ -23,4 +23,5 @@ html {
 body {
   /* instead of writing this border-box setting in *, you should use here so that you can use inherit in * for all elements to inherit from body */
   box-sizing: border-box;
+  position: relative;
 }
