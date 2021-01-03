@@ -10,13 +10,37 @@
   &__content {
     background-color: $color-white;
     width: 75%;
-    height: 50rem; //for testing purpose
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
-    @include absCenter // replaced the below code by mixin
-      // position: absolute;
-      // top: 50%;
-      // left: 50%;
-      // transform: translate(-50%, -50%);
-;
+    @include absCenter; // replaced the below code by mixin
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    border-radius: 3px;
+
+    // since children, left and right, are table-cell, we need this to be table. On doing this as table and setting children to tabel-cell, the children will then have equal heights
+    display: table;
+  }
+
+  &__left {
+    width: 33.33333%;
+    // We could use floats to left and right to properly allign images and content. But the problem is that the right box can't be vertically centered in that case, so we are doing something different
+    // Hence we do display as table-cell here. If this child is table-cell, it's parent, content, should be table
+    // float: left;
+    display: table-cell;
+    background-color: orange;
+  }
+  &__right {
+    width: 66.666667%;
+    // float: right;
+    display: table-cell;
+    background-color: red;
+  }
+  &__img {
+    // by default, images will be inline elements so width and other things won't apply. We need to change it to block on inline-blk
+    display: block;
+    width: 100%;
+  }
+  &__text {
   }
 }

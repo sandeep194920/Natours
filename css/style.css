@@ -491,12 +491,24 @@ body {
   .popup__content {
     background-color: #fff;
     width: 75%;
-    height: 50rem;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    display: table; }
+  .popup__left {
+    width: 33.33333%;
+    display: table-cell;
+    background-color: orange; }
+  .popup__right {
+    width: 66.666667%;
+    display: table-cell;
+    background-color: red; }
+  .popup__img {
+    display: block;
+    width: 100%; }
 
 .story {
   width: 75%;
