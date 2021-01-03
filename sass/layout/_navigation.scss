@@ -142,6 +142,7 @@
     &::after {
       content: "";
       left: 0;
+      transition: all 0.2s;
     }
     &::before {
       top: -0.8rem;
@@ -156,5 +157,22 @@
   }
   &__button:hover &__icon::before {
     top: -1rem;
+  }
+
+  //when checkbox is checked, the hamburger icon should become X mark
+  &__checkbox:checked + &__button &__icon {
+    // &__icon::before {
+    background-color: transparent; // hides the middle bar in hamburger
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0; // to position this to center first
+    // we could have done -45, but we are making (180deg-45deg) it looks cooler and feels as if it took more rotation before getting there
+    transform: rotate(-135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0; // to position this to center first
+    transform: rotate(135deg);
   }
 }
