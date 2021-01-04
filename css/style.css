@@ -1,3 +1,29 @@
+/*
+0 - 600px :  Phone
+600px - 900px :  Tablet portrait
+900px - 1200px :  Tablet landscape
+[1200px to 1800 px] is where our normal styles apply
+1800px+  : Big desktops
+*/
+/*
+Let's say in story.scss, we want this media query
+
+.story{
+  @media(max-width:600px){
+    width:50%;
+  }
+}
+
+// using the above mixin respond-phone, we can write this like this below (making use of @content)
+.story{
+  @include respond-phone{
+    width:50%;                        
+  }
+}
+
+//  
+
+*/
 /* CSS Animation for the heading-primary */
 /* this is for .heading-primary-main which needs to move in from left when page is loaded or reloaded */
 @keyframes moveInLeft {
