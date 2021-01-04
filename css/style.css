@@ -70,6 +70,18 @@ html {
   /* root font-size . This defines what 1rem is - which is 10px */
   /* it should be in % rather than px so that user can change it in the browser when zooms in or out. Default is 16px but we need a % equal to 10px which is 10/16 which is 62.5% */
   font-size: 62.5%; }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 80%; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 70%; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 60%; } }
+  @media (max-width: 600px) {
+    html {
+      font-size: 50%; } }
 
 body {
   /* instead of writing this border-box setting in *, you should use here so that you can use inherit in * for all elements to inherit from body */
@@ -574,9 +586,6 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
-  @media (max-width: 600px) {
-    .story {
-      width: 5%; } }
   .story__shape {
     width: 15rem;
     height: 15rem;

@@ -42,8 +42,32 @@ $breakpoint argument choices
 // argument type mixin
 
 @mixin respond($breakpoint) {
+  // this can be written in any order but should be called in descending order in the respective sass file
+  @if $breakpoint == tab-land {
+    // applies to all devices smaller or equal to 1200px
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    // applies to <= 900px
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
   @if $breakpoint == phone {
+    // applies to <=600px
     @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  // for 1200px to 1800px, none of the media queries will apply and hence our old css will apply
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 1800px) {
       @content;
     }
   }
