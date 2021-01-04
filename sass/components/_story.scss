@@ -9,6 +9,10 @@
   font-size: $default-font-size;
   transform: skewX(-12deg);
 
+  // for testing media query mixin for phone
+  @include respond(phone) {
+    width: 5%;
+  }
   //  the skew transformation above has skewed in x directon to -12deg, but we need the text and image (first children ) to skew back as we did before.
   //  but this below can't be used in this because transform can be applied only once. translate and skew both cant be applied on shape (one of the first children) so we
   //  will directly apply this on each child

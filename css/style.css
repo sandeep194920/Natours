@@ -6,70 +6,11 @@
 1800px+  : Big desktops
 */
 /*
-Let's say in story.scss, we want this media query
-
-.story{
-  @media(max-width:600px){
-    width:50%;
-  }
-}
-
-// using the above mixin respond-phone, we can write this like this below (making use of @content)
-.story{
-  @include respond-phone{
-    width:50%;                        
-  }
-}
-
-----------------------------------------------
-Well, this above example respond-phone is great, but what if we want multiple screen widths, for example,
-
-.story{
-  @media(max-width:900px){
-    width:50%;
-  }
-
-   @media(max-width:600px){
-    width:40%;
-  }
-
-   @media(max-width:300px){
-    width:30%;
-  }
-}
-
-For the above, we should write multiple mixins (different code blocks ) like this
-@mixin respond-phone900 {
-  @media (max-width: 900px) {
-    @content; // replaces with what we write in the file.  Look below example
-  }
-}
-@mixin respond-phone600 {
-  @media (max-width: 600px) {
-    @content; // replaces with what we write in the file.  Look below example
-  }
-}
-@mixin respond-phone400 {
-  @media (max-width: 400px) {
-    @content; // replaces with what we write in the file.  Look below example
-  }
-}
-
-But this is not efficient. It will be efficient if we will be able to pass the arguments like below.
-
-@mixin respond($breakpoint){
-
-  @if $breakpoint == phone {
-     @media (max-width: 600px) {
-         @content; 
-     }
-  }
-}
-
-
-
-//  
-
+$breakpoint argument choices
+- phone
+- tab portrait mode (tab-port)
+- tab landscape mode (tab-land)
+- big-desktop
 */
 /* CSS Animation for the heading-primary */
 /* this is for .heading-primary-main which needs to move in from left when page is loaded or reloaded */
@@ -633,6 +574,9 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
+  @media (max-width: 600px) {
+    .story {
+      width: 5%; } }
   .story__shape {
     width: 15rem;
     height: 15rem;
