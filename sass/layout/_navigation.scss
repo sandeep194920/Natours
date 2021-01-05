@@ -16,6 +16,16 @@
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
 
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
   &__background {
     //  Because it should be a circle, we give  same height and width and 50% border-radius
@@ -25,6 +35,16 @@
     position: fixed; // similar to absolute but this doesnt change the position as we scroll and thats the only difference. Like absolute, it also takes the element out of the flow
     top: 6.5rem;
     right: 6.5rem;
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+
     // linear gradient goes from one place and ends in other in one direction, where as radial-gradient starts at center and spreads in all directions
     background-image: radial-gradient(
       $color-primary-light,
