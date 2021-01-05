@@ -31,6 +31,13 @@
     0 100%
   ); // vendor implemented, to work across all the browsers. put this line first and then normal clip-path
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // for small devices, the steep is too much, so reducing the clip-path
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
   /* setting this element to relative because this is parent element to logo-box and text-box which are the child and absolutely positioned */
   position: relative;
 
