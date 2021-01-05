@@ -174,6 +174,10 @@ body {
       animation-iteration-count: 3;  - Animation will happen for 3 times
       
       */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -181,6 +185,10 @@ body {
     letter-spacing: 1.64rem;
     /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.75rem;
+        font-size: 1.5rem; } }
 
 body {
   font-family: "Lato", sans-serif;

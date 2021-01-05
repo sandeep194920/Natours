@@ -33,6 +33,12 @@
       animation-iteration-count: 3;  - Animation will happen for 3 times
       
       */
+
+    // media-query for phone
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
   }
   &--sub {
     display: block;
@@ -41,6 +47,12 @@
     letter-spacing: 1.64rem;
     /* You can specify all animation properties like name, duration like we have done in heading-primary-main into animation like below */
     animation: moveInRight 1s ease-out;
+
+    // media-query for phone
+    @include respond(phone) {
+      letter-spacing: 0.75rem;
+      font-size: 1.5rem;
+    }
   }
 }
 
