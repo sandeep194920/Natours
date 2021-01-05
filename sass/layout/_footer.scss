@@ -5,6 +5,10 @@
   //   giving color here so that child (.footer__copyright) will inherit from this
   color: $color-grey-light-1;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     // image is an inline element so we do text-align center
     text-align: center;
@@ -19,6 +23,11 @@
     border-top: 1px solid $color-grey-dark;
     padding-top: 2rem;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
   &__list {
     list-style: none;
@@ -57,5 +66,10 @@
     // these two width and float are used to push this element copyright to right side as possible
     width: 80%;
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
   }
 }
