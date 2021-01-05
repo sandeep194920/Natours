@@ -3,6 +3,11 @@
   // min-width: is the width it cannot not be smaller than the specified number. It introduces horizontal scroll;
   //   width: 295rem;
   max-width: $grid-width;
+
+  @include respond(tab-port) {
+    max-width: 50rem;
+  }
+
   // background-color: #eee;
   margin: 0 auto;
   //   margin-bottom: $gutter-vertical; // we can include this here if we are not using  &:not(:last-child)
