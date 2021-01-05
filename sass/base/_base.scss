@@ -17,27 +17,24 @@
 html {
   /* root font-size . This defines what 1rem is - which is 10px */
   /* it should be in % rather than px so that user can change it in the browser when zooms in or out. Default is 16px but we need a % equal to 10px which is 10/16 which is 62.5% */
-  font-size: 62.5%;
-
-  // for testing media-queries
+  font-size: 62.5%; //1 rem = 10px;  10px/16px = 62.5%
 
   // always make sure you write in descending order (example first for 900px and then for 600px
   // the reason is that if the screen is 300px, then both 900px and 600px media queries written will apply. In that case we want the 600px mediaquery to be applied on that and not 900px one. It will only happen when it is written at last
 
   // note that I am writing in descending order here. Ignore big-desktop because its min-width (see the mixin) and it doesnt affect the rest of them. The others are based on max-width so should be written in descending order
   @include respond(big-desktop) {
-    font-size: 80%;
+    // width > 1800
+    font-size: 75%; // 1rem = 12px ; 12/16 =
   }
   // descending order (big device to small device). If we dont follow this then the bigger device queries (written last) will be applied on small devices
   @include respond(tab-land) {
-    font-size: 70%;
+    // width < 1200
+    font-size: 56.25%; // 1 rem = 9px; 9/16 = 56.25%
   }
   @include respond(tab-port) {
-    font-size: 60%;
-  }
-
-  @include respond(phone) {
-    font-size: 50%;
+    // width < 900
+    font-size: 50%; // 1 rem = 8px; 8/16 =  50%
   }
 }
 

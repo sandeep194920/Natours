@@ -12,6 +12,60 @@ $breakpoint argument choices
 - tab landscape mode (tab-land)
 - big-desktop
 */
+/*
+Note : em and rem in media-queries are not affected by our root font-size setting. So, in scss till now we used to have 10px = 1rem = 62.5%. But that doesnt work now.
+
+ - 1em or 1rem in the mediaquery is always equal to the root font size (coming from the browser which is 16px by default).
+ - We are going to use em instead of rem here because rem in media-query fail to work in some of the browsers. So em is the best option for media query
+
+ Let's calculate now knowing 1em = 16px
+                             600px = 600/16 = 37.5em
+                             900px = 900/16 = 56.25em
+                             1200px = 1200/16 = 75em
+                             1800px = 1800/16 = 112.5em
+
+
+Looks at the end of this file for more about em and rem
+*/
+/*
+Notes : About font-size and length unit measurements:
+
+We have 4 types of representation of sizes (FONT-SIZE or LENGTH(width or height)) -  %, px, em and rem, vh and vw 
+
+* * Percentage - (Treated differently for font-size and width/height):
+% is not a unit but it's just the representation of how much of the original px value. 150% of 1px is 1.5px
+
+% for font-size - The element will have a font-size of specific % multiplied by PARENT ELEMENT's font size.
+                  Example, if html {font-size : 10px}, then header {font-size : 150%} means 150% of 10px which is = 15px 
+
+% for length (width/height of padding, margin etc..) - The element will have % of length in relation to the parent's property. 
+                  Example, 10% of width of a div will be equal to 10% of width of its parent. 
+                  Consider a block of width 100px (which is 100%)
+                  Parent div - width - 50%,(50px) then child div 10% means it will be 5px
+
+So always remember, parents length and font is reference for child's length and font calculation. 20% height means 20% of it's parents height. 20% of font-size means 20% of its parent's font-size
+
+
+* * em and rem - They both are relative units and they are font-based for both font-size and length. But em is slightly complex.
+
+****  em (for font-size) - child's font-size depends on immediate PARENT's font-size. If parent's font-size is 10px, then if I set child's font-size to 1.5em, then it is 15px.
+      em (for length) - depends on font-size of itself. Example, if div's font-size is 15px, then if width is set to 10em, then the width will be 15px * 10em = 150px  
+
+      em - - for font, reference is parent and for length reference is itself
+
+**** rem (same for font-size and length) -  Always in refence with root font size for both length and font. 
+                                        
+
+  NOTE- Root font-size means one u set in html{}. If its not set here then the root font-size is the one that comes from browser
+
+Why we need to set the units to ems and rems when it's based on font size ?
+Because its easy to change the font-size and responsively the design can change instead of manually changing in all places.
+      
+
+
+vh - viewport height - 1vh is 1% of viewport height
+vw - viewport width - 1vw is 1% of viewport width
+*/
 /* CSS Animation for the heading-primary */
 /* this is for .heading-primary-main which needs to move in from left when page is loaded or reloaded */
 @keyframes moveInLeft {
@@ -70,16 +124,13 @@ html {
   /* root font-size . This defines what 1rem is - which is 10px */
   /* it should be in % rather than px so that user can change it in the browser when zooms in or out. Default is 16px but we need a % equal to 10px which is 10/16 which is 62.5% */
   font-size: 62.5%; }
-  @media (min-width: 1800px) {
+  @media (min-width: 112.5em) {
     html {
-      font-size: 80%; } }
-  @media (max-width: 1200px) {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
     html {
-      font-size: 70%; } }
-  @media (max-width: 900px) {
-    html {
-      font-size: 60%; } }
-  @media (max-width: 600px) {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
     html {
       font-size: 50%; } }
 
