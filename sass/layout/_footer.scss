@@ -13,6 +13,10 @@
     // image is an inline element so we do text-align center
     text-align: center;
     margin-bottom: 8rem;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
   }
   &__logo {
     width: 15rem;
