@@ -40,6 +40,10 @@
 
   // since the bg is skewed, we have a white space in the left top. Let's fix that by applying negative margin-top
   margin-top: -10rem;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
 }
 
 .section-tours {
