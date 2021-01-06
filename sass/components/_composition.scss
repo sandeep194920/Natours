@@ -12,22 +12,43 @@
     // we could've used border and padding, but we're simply using outline and outline-offset here
     outline-offset: 2rem;
 
+    @include respond(tab-port) {
+      float: left;
+      position: relative; //we need to have this for floats to work
+      width: 33.3333333%;
+      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.2);
+    }
+
     &--p1 {
       left: 0;
       top: -2rem;
+      @include respond(tab-port) {
+        top: 0;
+        transform: translate(1.1);
+      }
     }
     &--p2 {
       right: 0;
       top: 2rem;
+      @include respond(tab-port) {
+        top: -1rem;
+        transform: scale(1.3);
+        z-index: 100;
+      }
     }
 
     &--p3 {
       left: 20%;
       top: 10rem;
+      @include respond(tab-port) {
+        top: 1rem;
+        left: 0;
+        transform: scale(1.1);
+      }
     }
 
     &:hover {
-      transform: scale(1.05) translateY(-0.5rem); //scales bigger and also moves a little in y direction
+      transform: scale(1.05) scaleY(-0.5rem); //scales bigger and also moves a little in y direction
       box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5);
       z-index: 20; // higher than initial z-index 10, so this image will show up completely
       outline: 1.5rem solid $color-primary; //same like border. look above outline-offset for more explanation
