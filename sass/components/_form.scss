@@ -17,6 +17,10 @@
     display: block;
     transition: all 0.6s;
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     // when we click on input the border becomes blue, we can remove that by focus attribute
     &:focus {
       outline: none;
@@ -60,6 +64,11 @@
     // we could have used floats also to make labels side by side instead of giving a width and display inline-block. But this is also a good approach
     width: 49%;
     display: inline-block;
+
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
   &__radio-label {
     font-size: $default-font-size;
