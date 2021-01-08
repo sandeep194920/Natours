@@ -478,14 +478,25 @@
     <!-- we're still giving a class because in BEM methodology, each element should get a class -->
     <footer class="footer">
       <div class="footer__logo-box">
-        <!-- We can use srcset to define image to be used on different screen size. This technique is called density switching -->
-        <!-- Normal screens (like desktop) will have 1px per px width so 100px means exactly 100 physical pixels whereas high res screens like 4k will have 2px per 1px width. So we use high density image-->
-        <!-- The switching happens automatically if we specify the srcset -->
-        <img
-          srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
-          alt="Full Logo"
-          class="footer__logo"
-        />
+        <!-- Art direction -->
+        <!-- AD is a technique where we want one image on one screen size and other image on other screen size -->
+        <picture class="footer__logo">
+          <!-- we should have atleast one source and one image -->
+          <!-- if screen width is less than 37.5em (600px) then we need 1x image -->
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width : 37.5em)"
+          />
+          <!-- if screen width is 600 or less then above image is used else below one is used -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full Logo"
+            class="footer__logo"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
