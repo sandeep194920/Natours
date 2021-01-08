@@ -478,7 +478,14 @@
     <!-- we're still giving a class because in BEM methodology, each element should get a class -->
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full Logo" class="footer__logo" />
+        <!-- We can use srcset to define image to be used on different screen size. This technique is called density switching -->
+        <!-- Normal screens (like desktop) will have 1px per px width so 100px means exactly 100 physical pixels whereas high res screens like 4k will have 2px per 1px width. So we use high density image-->
+        <!-- The switching happens automatically if we specify the srcset -->
+        <img
+          srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+          alt="Full Logo"
+          class="footer__logo"
+        />
       </div>
       <div class="row">
         <div class="col-1-of-2">
