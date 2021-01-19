@@ -113,7 +113,47 @@
             <!--Shortcut to generate the below div block in emmet - .composition>(img.composition__photo.composition__photo--p1)*3 -->
 
             <div class="composition">
+              <!-- resoulution switching - here we allow the browser to choose (download) the right image for the current media query -->
+              <!-- next to each image, we specify the width of the image. If image is 300px wide then we say 300w. This is helpful for browser to 
+              figure out the width witout having to download the image, but this alone is not helpful. We need sizes attribute as well. -->
+              <!-- sizes basically tells what space the image occupies for that break point. Let's say 900px is a breakpoint and when we inspect that image we get a width of 171px. 
+              That would be 171px/900px which is 20% of the view port width, so we write 20vw as shown for 900px breakpoint. Similarly we mention all the breakpoints in the sizes. 
+              For 600px bp, it will be 171px/600px which is 28.5% almost so we can consider as 30vw. At the end, we can say a defult size like 300px here -->
+              <!-- We can, at the end, include the src incase if user is using older browser and it doesnt support srcset, sizes and so on. -->
               <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width:600px) 30vw, 300px"
+                alt="Photo 1"
+                class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width:600px) 30vw, 300px"
+                alt="Photo 1"
+                class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width:600px) 30vw, 300px"
+                alt="Photo 2"
+                class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width:900px) 20vw, (max-width:600px) 30vw, 300px"
+                alt="Photo 3"
+                class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
+              />
+              <!-- To know if this srcset is working as expected, inspect the image and reponsively decrease the size, go to properties in dev tools in chrome and look for current src on this image. It shows which is the image being used currently. U might have to refresh the screen  after reducing the size. 
+              Note that on chrome, sometimes it doesnt show properly so be sure to test in the real world if right images are getting loaded. This really improves the performance -->
+              <!-- <img
                 src="img/nat-1-large.jpg"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
@@ -127,7 +167,7 @@
                 src="img/nat-3-large.jpg"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -483,12 +523,14 @@
         <picture class="footer__logo">
           <!-- we should have atleast one source and one image -->
           <!-- if screen width is less than 37.5em (600px) then we need 1x image -->
+          <!-- src will be ignored in case if browser understands srcset -->
           <source
             srcset="
               img/logo-green-small-1x.png 1x,
               img/logo-green-small-2x.png 2x
             "
             media="(max-width : 37.5em)"
+            src="img/logo-green-small-1x.png"
           />
           <!-- if screen width is 600 or less then above image is used else below one is used -->
           <img
