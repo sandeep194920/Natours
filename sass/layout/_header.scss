@@ -38,7 +38,7 @@
   // Up until now, we wrote mq only with respect to view port width but there are other type of mqs. One of them is to target device resolution.
 
   // 192 dots per inch is the apple's retina screen resolution and it is a reference generally.
-  @media (min-resolution: 192dpi) and (min-width: 600px) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
     // this says, whenever the resoltuion is higher than 192dpi AND min-width<=600px then apply this media-query. For a phone, we would generally have not more than 2x screen, so 600 physical px will be phone's width * 2 = 1200px max should be enough, so we apply this max-width mq here along with screen resolution
     // And here we want the high res hero bg image
     background-image: linear-gradient(
@@ -50,17 +50,17 @@
       url(../img/hero.jpg);
   }
   // If width is larger than 2000px then we also need high res image, hero
-  @media (min-width: 2000px) {
-    // this says, whenever the resoltuion is higher than 192dpi AND min-width<=600px then apply this media-query. For a phone, we would generally have not more than 2x screen, so 600 physical px will be phone's width * 2 = 1200px max should be enough, so we apply this max-width mq here along with screen resolution
-    // And here we want the high res hero bg image
-    background-image: linear-gradient(
-        to right bottom,
-        /* changing the below colors from primary to secondary for testing purpose so we know which images are loaded when screen res is changed*/
-          rgba($color-secondary-light, 0.8),
-        rgba($color-secondary-dark, 0.8)
-      ),
-      url(../img/hero.jpg);
-  }
+  // @media (min-width: 2000px) {
+  //   // this says, whenever the resoltuion is higher than 192dpi AND min-width<=600px then apply this media-query. For a phone, we would generally have not more than 2x screen, so 600 physical px will be phone's width * 2 = 1200px max should be enough, so we apply this max-width mq here along with screen resolution
+  //   // And here we want the high res hero bg image
+  //   background-image: linear-gradient(
+  //       to right bottom,
+  //       /* changing the below colors from primary to secondary for testing purpose so we know which images are loaded when screen res is changed*/
+  //         rgba($color-secondary-light, 0.8),
+  //       rgba($color-secondary-dark, 0.8)
+  //     ),
+  //     url(../img/hero.jpg);
+  // }
 
   // for small devices, the steep is too much, so reducing the clip-path
   @include respond(phone) {
