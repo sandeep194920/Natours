@@ -900,7 +900,7 @@ body {
   /* setting this element to relative because this is parent element to logo-box and text-box which are the child and absolutely positioned */
   position: relative;
   /* Text-box */ }
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em), (-webkit-min-device-pixel-ratio: 2) {
     .header {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
