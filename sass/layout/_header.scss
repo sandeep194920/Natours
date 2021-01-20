@@ -10,7 +10,7 @@
       /* note that the hex color inside rgba works only for sass/scss and not for normal css*/
         rgba($color-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg); // this is small image for lower resolution screen. We are writing mq written below for higher res screen
   background-size: cover; /* fits completely*/
   background-position: top; /* always fixed to top. Top never changes when u reduce window size. Can be done for bottom/center as well. Play with it and see*/
 
@@ -31,6 +31,24 @@
     0 100%
   ); // vendor implemented, to work across all the browsers. put this line first and then normal clip-path
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  /*RESPONSIVE IMAGES IN CSS*/
+  /* Note : hero bg is 600px while hero-small bg is 200px*/
+  // The mq for image is to load different images for different situations.
+  // Up until now, we wrote mq only with respect to view port width but there are other type of mqs. One of them is to target device resolution.
+
+  // 192 dots per inch is the apple's retina screen resolution and it is a reference generally.
+  @media (min-resolution: 192dpi) and (min-width: 600px) {
+    // this says, whenever the resoltuion is higher than 192dpi AND min-width<=600px then apply this media-query. For a phone, we would generally have not more than 2x screen, so 600 physical px will be phone's width * 2 = 1200px max should be enough, so we apply this max-width mq here along with screen resolution
+    // And here we want the high res hero bg image
+    background-image: linear-gradient(
+        to right bottom,
+        /* changing the below colors from primary to secondary for testing purpose so we know which images are loaded when screen res is changed*/
+          rgba($color-secondary-light, 0.8),
+        rgba($color-secondary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+  }
 
   // for small devices, the steep is too much, so reducing the clip-path
   @include respond(phone) {

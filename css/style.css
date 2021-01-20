@@ -873,7 +873,7 @@ body {
   height: 95vh;
   /* we have a bg image. We need to set green color on top of it, so we specify a gradiant. Gradiant will come first coz it should stay on top of bg image */
   /* linear gradiant is having multiple colors and to right indicate from left (dark green to right light green). We can also give to top OR to bottom OR to right bottom and so on */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
   background-size: cover;
   /* fits completely*/
   background-position: top;
@@ -890,9 +890,14 @@ body {
     */
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*RESPONSIVE IMAGES IN CSS*/
+  /* Note : hero bg is 600px while hero-small bg is 200px*/
   /* setting this element to relative because this is parent element to logo-box and text-box which are the child and absolutely positioned */
   position: relative;
   /* Text-box */ }
+  @media (min-resolution: 192dpi) and (min-width: 600px) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)), url(../img/hero.jpg); } }
   @media (max-width: 37.5em) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
