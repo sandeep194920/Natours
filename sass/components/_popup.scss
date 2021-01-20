@@ -13,6 +13,21 @@
   // animation is not possible if we have used display none. So we are using opacity and visibility as I told
   transition: all 0.4s;
 
+  // @support is a feature query. Some props like backdrop-filter works only in safari, that too with the webkit and not on any other browser
+  // so we can actually implement that for safari and leave it as before for other browsers. We can achieve that using @supports
+  // this is called graceful degradation. Checkout caniuse.com to know if a prop can be used on a browser or not
+  @supports (
+    -webkit-backdrop-filter: blur(10px) or (backdrop-filter: blur(10px))
+  ) {
+    // backdrop-filter currently works only in safari, that too with the webkit and not on any other browser
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(
+      10px
+    ); // in future browsers may support this,so leaving this here
+    // bg color of 0.3 looks good for this when bg is blurred with backdrop-filter
+    background-color: rgba($color-black, 0.3);
+  }
+
   &__content {
     background-color: $color-white;
     width: 75%;
