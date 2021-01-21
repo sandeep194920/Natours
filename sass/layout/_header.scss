@@ -39,9 +39,9 @@
 
   // 192 dots per inch is the apple's retina screen resolution and it is a reference generally.
   // this doesn't work on safari so we need -webkit-min-device-pixel-ratio. This means here that the device's pixel ratio should be atleast 2x which is actually same as the 192dpi one.
-  @media (min-resolution: 192dpi) and (min-width: 37.5em),
-    (min-width: 125em),
-    (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (min-width: 125em),
+    only screen and (-webkit-min-device-pixel-ratio: 2) {
     // this says, whenever the resoltuion is higher than 192dpi AND min-width<=600px then apply this media-query. For a phone, we would generally have not more than 2x screen, so 600 physical px will be phone's width * 2 = 1200px max should be enough, so we apply this max-width mq here along with screen resolution
     // And here we want the high res hero bg image
     background-image: linear-gradient(
