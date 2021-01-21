@@ -47,8 +47,8 @@
     background-image: linear-gradient(
         to right bottom,
         /* changing the below colors from primary to secondary for testing purpose so we know which images are loaded when screen res is changed*/
-          rgba($color-secondary-light, 0.8),
-        rgba($color-secondary-dark, 0.8)
+          rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
       ),
       url(../img/hero.jpg);
   }
