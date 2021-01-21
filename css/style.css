@@ -143,6 +143,10 @@ body {
     body {
       padding: 0; } }
 
+::selection {
+  background-color: #55c57a;
+  color: #fff; }
+
 /* Heading */
 .heading-primary {
   color: #fff;

@@ -49,3 +49,9 @@ body {
     padding: 0;
   }
 }
+
+// when we select text, a blue background appears on text. Let's change it here using ::selection pseudo element
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
