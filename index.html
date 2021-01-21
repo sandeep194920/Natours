@@ -669,6 +669,14 @@
 
     "watch:sass": "node-sass sass/main.scss css/style.css -w",   // this just watches for changes as we develop and save (compile on the fly without running the command always)
  
+    // Generally, we run live-server in a terminal to run the server and watch:sass in a different terminal for convering and watching the scss to css changes if any. We can do both of these in a single step
+    "devserver":"live-server",
+    "start":"npm-run-all --parallel devserver watch:sass" // we are running both the tasks in parallel. No need to run them one after the other like we do in build process below. We can run them in parallel as they are not dependent on each other.
+
+    // for this start to work, we need to run - 'npm run start' in terminal
+
+
+
     // 4 steps below
 
     "compile:sass": "node-sass sass/main.scss css/style.comp.css" // this compiles and creates the styles.comp.css. The diff bw this file and watch file is just that we dont have to run the command always for the above line watch
