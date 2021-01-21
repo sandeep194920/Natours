@@ -210,7 +210,9 @@
   // So we can just extend the bottom of the card to have the btn there.
   // So this is a whole re-write of the entire card
 
-  @include respond(tab-port) {
+  // @include respond(tab-port) { // commenting this part and introducing the original mq below as we cant add a second condition to this line.
+  // second condition is that, on mobile devices (or touch devices like tab, ipad and so on), we dont hover and hence the back part of the card will not be visible. So this mq should also apply for the touch devices, hence we add a second condition saying it should apply if user can't hover (hover:none). Opposite of this is (hover:hover)
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
